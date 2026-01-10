@@ -7,10 +7,8 @@ import { Menu, X } from "lucide-react"
 import { cn } from "@/lib/utils"
 
 const navItems = [
-    { name: "About", href: "/about" },
-    { name: "Blog", href: "/blog" },
     { name: "Work", href: "/work" },
-    { name: "Contact", href: "/contact" },
+    { name: "Blog", href: "/blog" },
 ]
 
 export function Header() {
@@ -43,6 +41,14 @@ export function Header() {
                                 {item.name}
                             </Link>
                         ))}
+                        <a
+                            href="https://linkedin.com/in/sudhanshugiri"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="px-6 py-2.5 rounded-full bg-brand-primary text-white text-[10px] font-black uppercase tracking-[0.2em] hover:bg-brand-primary/90 transition-all shadow-lg shadow-brand-primary/20 mono-metric"
+                        >
+                            Connect
+                        </a>
                     </nav>
 
                     {/* Mobile Menu Button */}
@@ -76,6 +82,14 @@ export function Header() {
                                 {item.name}
                             </Link>
                         ))}
+                        <a
+                            href="https://linkedin.com/in/sudhanshugiri"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="block px-3 py-3 mt-4 text-center rounded-xl bg-brand-primary text-white text-sm font-black uppercase tracking-[0.2em] shadow-lg shadow-brand-primary/20 mono-metric"
+                        >
+                            Connect
+                        </a>
                     </div>
                 </div>
             )}

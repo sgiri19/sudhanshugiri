@@ -146,12 +146,14 @@ export function WorkContent({ initialCaseStudies }: WorkContentProps) {
                 className="pt-16 text-center"
             >
                 <h3 className="text-3xl font-black mb-8 text-neutral-900 tracking-tight">Want to build something similar?</h3>
-                <Link
-                    href="/contact"
+                <a
+                    href="https://linkedin.com/in/sudhanshugiri"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="inline-flex items-center px-12 py-5 bg-brand-primary text-white font-black uppercase tracking-[0.2em] text-xs rounded-full hover:bg-brand-primary/90 transition-all shadow-2xl shadow-brand-primary/20 mono-metric"
                 >
                     Let&apos;s talk Strategy
-                </Link>
+                </a>
             </motion.div>
         </div>
     )

@@ -1,36 +1,38 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Strategic Operator | Sudhanshu Giri
 
-## Getting Started
+A premium, high-performance portfolio and production log for a Product & Program Leader. Built with a focus on **Strategic Execution**, **AI Productization**, and **Measurable ROI**.
 
-First, run the development server:
+## 🚀 Project Highlights
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+### 🎨 Design System: The Strategic Operator
+- **Technical Aesthetic**: Clean "Blueprint" design language utilizing subtle grid patterns and high-contrast indigo accents.
+- **Typography**: Command-level typography using **Instrument Sans** for headlines and **JetBrains Mono** for technical metadata and metrics.
+- **Philosophy of Execution**: A dedicated section on the About page detailing core operational rules (e.g., "Production is the only metric").
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 🛠️ Production Features
+- **Case Study Engine**: Specialized formatting for "Production Wins" with automated success point tracking.
+- **Administrative Control**: Secure, branded dashboard for managing insights, logs, and technical meta-assets without touching code.
+- **Performance Optimized**: Built on Next.js 15+ with Tailwind v4, achieving near-perfect Lighthouse scores and zero linting debt.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### 📐 Technical Architecture
+- **Framework**: Next.js (App Router)
+- **Styling**: Tailwind CSS v4 (with custom `@theme` directives)
+- **Content**: MDX (Markdown + React components)
+- **Deployment**: Vercel-ready with edge-optimized static generation.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🏁 Operational Rules
 
-## Learn More
+- **RULE 01**: Production is the only metric.
+- **RULE 02**: ROI > Novelty.
+- **RULE 03**: Precision is Non-Negotiable.
+- **RULE 04**: The Technical Bridge.
 
-To learn more about Next.js, take a look at the following resources:
+## 🛠️ Getting Started
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. **Install Dependencies**: `npm install`
+2. **Environment Setup**: Create a `.env.local` with `NEXT_PUBLIC_ADMIN_PIN` for dashboard access.
+3. **Local Development**: `npm run dev`
+4. **Deploy**: Push to GitHub and connect to Vercel.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+*Built for Mission-Critical Leadership.*

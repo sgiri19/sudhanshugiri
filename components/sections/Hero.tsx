@@ -48,12 +48,14 @@ export function Hero() {
                                 View Production Wins
                                 <ArrowRight className="ml-2" size={18} />
                             </Link>
-                            <Link
-                                href="/contact"
+                            <a
+                                href="https://linkedin.com/in/sudhanshugiri"
+                                target="_blank"
+                                rel="noopener noreferrer"
                                 className="inline-flex items-center px-8 py-4 rounded-2xl border border-neutral-200 text-neutral-900 font-bold hover:bg-neutral-50 transition-all"
                             >
                                 Let's Talk Strategy
-                            </Link>
+                            </a>
                         </div>
                     </motion.div>
                 </div>
