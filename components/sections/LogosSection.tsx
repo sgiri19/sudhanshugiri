@@ -16,7 +16,7 @@ export function LogosSection() {
                             <span key={i} className="text-xl md:text-2xl font-black text-[#0f172a] tracking-tight">{logo}</span>
                         ))}
                     </div>
-                    <p className="font-mono text-xs md:text-sm text-slate-500 uppercase tracking-widest">
+                    <p className="mono-metric text-xs md:text-sm text-slate-500 uppercase tracking-widest">
                         Enterprise AI • Consumer Platforms • Global Scale
                     </p>
                 </div>

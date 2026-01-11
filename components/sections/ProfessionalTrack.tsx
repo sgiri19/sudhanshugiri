@@ -4,11 +4,11 @@ import { motion } from "framer-motion"
 
 export function ProfessionalTrack() {
     const history = [
-        { role: "Product Leader", company: "Skit.ai", scope: "Conversational AI Leadership" },
-        { role: "Product Manager", company: "Bigspring", scope: "Enterprise AI Enablement" },
-        { role: "Product Manager", company: "ByteDance", scope: "Scale & Platform Growth" },
-        { role: "Product Manager", company: "Toppr", scope: "EdTech Product Delivery" },
-        { role: "Software Engineer", company: "Tech Mahindra", scope: "Enterprise Systems Foundation" }
+        { role: "Product Leader", company: "Skit.ai", scope: "Led conversational AI across regulated financial deployments" },
+        { role: "Program Manager", company: "BigSpring", scope: "Scaled AI platform adoption across enterprise customers" },
+        { role: "Product Manager", company: "ByteDance", scope: "Drove growth initiatives on global consumer platforms" },
+        { role: "Associate Program Manager", company: "Toppr", scope: "Delivered learner-facing product experiences at scale" },
+        { role: "Software Engineer", company: "Tech Mahindra", scope: "Built enterprise integration systems" }
     ]
 
     return (

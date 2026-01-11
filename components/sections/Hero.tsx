@@ -9,12 +9,12 @@ export function Hero() {
     return (
         <section className="py-20 md:py-32">
             <div className="container mx-auto px-4">
-                <div className="flex flex-col-reverse md:flex-row items-center gap-12 md:gap-24">
+                <div className="flex flex-col-reverse md:flex-row items-center justify-between gap-12">
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.5 }}
-                        className="flex-1 space-y-8"
+                        className="flex-1 space-y-8 max-w-3xl"
                     >
                         <h1 className="text-5xl md:text-7xl font-black tracking-tighter text-[#4338ca] leading-[1.1]">
                             Productizing Enterprise AI.

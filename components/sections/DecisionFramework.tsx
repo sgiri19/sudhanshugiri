@@ -22,7 +22,7 @@ export function DecisionFramework() {
                             { label: "Ownership", desc: "Clear accountability over consensus" }
                         ].map((item, i) => (
                             <div key={i} className="flex flex-col space-y-2">
-                                <span className="font-mono text-sm font-bold text-[#4338ca] uppercase tracking-wider">{item.label}</span>
+                                <span className="mono-metric text-sm font-bold text-[#4338ca] uppercase tracking-wider">{item.label}</span>
                                 <p className="text-lg font-medium text-[#0f172a] leading-snug">{item.desc}</p>
                             </div>
                         ))}

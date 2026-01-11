@@ -40,9 +40,9 @@ export function Philosophy() {
                             transition={{ delay: i * 0.1 }}
                             className="p-8 rounded-[2rem] bg-white border border-neutral-100 shadow-sm blueprint-card hover:border-[#4338ca] hover:shadow-lg transition-all"
                         >
-                            <div className="font-mono text-sm font-bold text-[#4338ca] mb-4">
+                            <span className="mono-metric text-sm font-bold text-[#4338ca] uppercase tracking-wider mb-4 block">
                                 RULE {item.rule}
-                            </div>
+                            </span>
                             <h4 className="text-xl font-bold text-[#0f172a] mb-4 tracking-tight leading-snug">
                                 {item.title}
                             </h4>
