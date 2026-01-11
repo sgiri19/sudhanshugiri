@@ -1,6 +1,7 @@
 "use client"
 
 import Image from "next/image"
+import Link from "next/link"
 import { motion } from "framer-motion"
 import { ArrowRight } from "lucide-react"
 
@@ -30,15 +31,32 @@ export function Hero() {
                         transition={{ duration: 0.5, delay: 0.2 }}
                         className="max-w-4xl space-y-6"
                     >
-                        <h1 className="text-4xl md:text-7xl font-extrabold tracking-tight text-neutral-900 leading-[1.1]">
-                            Productizing <span className="text-brand-primary">Enterprise AI.</span>
+                        <h1 className="text-4xl md:text-6xl font-black tracking-tighter text-[#0f172a] leading-[1.1]">
+                            Productizing Enterprise AI.
                         </h1>
-                        <p className="text-xl md:text-3xl text-neutral-600 font-bold leading-relaxed max-w-3xl mx-auto">
-                            From pilot to production — safely, scalably, and with measurable ROI.
+                        <p className="text-lg md:text-lg text-slate-700 font-semibold leading-relaxed max-w-3xl mx-auto">
+                            Delivering AI systems that work — not just demos — in regulated, high-stakes environments.
                         </p>
-                        <p className="text-lg md:text-xl text-neutral-500 max-w-2xl mx-auto leading-relaxed">
-                            I work at the intersection of AI systems, product strategy, and delivery execution — helping teams move beyond demos into production-grade systems that actually run the business.
+                        <p className="text-base text-slate-500 max-w-xl mx-auto leading-relaxed">
+                            Focused on accuracy, explainability, and measurable ROI.
                         </p>
+
+                        <div className="flex flex-wrap justify-center gap-4 pt-4">
+                            <Link
+                                href="/work"
+                                className="inline-flex items-center px-8 py-4 rounded-xl bg-[#4338ca] text-white font-semibold hover:bg-[#4338ca]/90 transition-all shadow-lg hover:shadow-xl hover:scale-[1.02]"
+                            >
+                                View Production Wins
+                            </Link>
+                            <a
+                                href="https://linkedin.com/in/sudhanshugiri"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="inline-flex items-center px-8 py-4 rounded-xl border border-[#0f172a] text-[#0f172a] font-semibold hover:bg-neutral-50 transition-all"
+                            >
+                                Let's Talk Strategy
+                            </a>
+                        </div>
                     </motion.div>
                 </div>
             </div>

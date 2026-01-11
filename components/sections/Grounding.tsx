@@ -12,12 +12,9 @@ export function Grounding() {
                     viewport={{ once: true }}
                     className="prose prose-lg prose-neutral md:prose-xl mx-auto"
                 >
-                    <h2 className="text-[10px] font-black uppercase tracking-[0.2em] text-brand-primary mb-8 mono-metric">Where These Principles Come From</h2>
-                    <p className="font-heading font-bold text-2xl md:text-3xl leading-relaxed text-neutral-900">
-                        Over the last decade, I’ve worked across consumer platforms, enterprise products, and AI-driven systems — in environments where reliability, compliance, and outcomes mattered more than speed alone.
-                    </p>
-                    <p className="text-xl md:text-2xl leading-relaxed text-neutral-500 mt-8 font-medium">
-                        These principles weren’t designed in theory. They were shaped in production incidents, regulatory reviews, missed SLAs, and systems that had to work — every day.
+                    <h2 className="text-2xl font-extrabold text-[#0f172a] mb-8 tracking-tight">Credibility Built in Production.</h2>
+                    <p className="font-normal text-base text-slate-600 leading-relaxed">
+                        Over a decade, I’ve worked across enterprise platforms, product teams, and AI systems where reliability, governance, and business impact were non-negotiable. These principles emerged from real production constraints, not academic theory.
                     </p>
                 </motion.div>
             </div>

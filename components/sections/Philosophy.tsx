@@ -5,27 +5,27 @@ import { motion } from "framer-motion"
 const principles = [
     {
         rule: "01",
-        context: "Most AI failures happen after the pilot.",
-        title: "Productize. Don’t demo.",
-        desc: "I focus on turning promising prototypes into systems that can be monitored, governed, and scaled — without collapsing under real usage."
+        context: "Promising prototypes must turn into monitored, governed systems that survive production complexity.",
+        title: "Productize, don’t demo.",
+        desc: ""
     },
     {
         rule: "02",
-        context: "In regulated and high-stakes environments, accuracy alone isn’t enough.",
-        title: "Safety and scale are not trade-offs.",
-        desc: "Systems must be auditable, predictable, and resilient — by design, not by exception."
+        context: "In regulated environments, unaudited decisions become failures — not features.",
+        title: "Safety and scale go together.",
+        desc: ""
     },
     {
         rule: "03",
-        context: "Roadmaps don’t fail in planning. They fail in execution gaps.",
+        context: "Operational gaps often kill value faster than technical debt.",
         title: "Delivery is a product decision.",
-        desc: "I work where gaps exist between product intent, engineering reality, and customer constraints."
+        desc: ""
     },
     {
         rule: "04",
-        context: "I don’t optimize for narratives.",
-        title: "Evidence beats opinion. Every time.",
-        desc: "I optimize for metrics that survive production: adoption, reliability, latency, retention, and ROI."
+        context: "The strongest roadmap is one that delivers measurable, real-world impact.",
+        title: "Outcomes > Intent.",
+        desc: ""
     }
 ]
 

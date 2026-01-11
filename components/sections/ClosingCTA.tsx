@@ -12,10 +12,10 @@ export function ClosingCTA() {
                     viewport={{ once: true }}
                 >
                     <h2 className="text-3xl md:text-5xl font-black text-neutral-900 tracking-tight leading-tight mb-8">
-                        If you’re building AI that has to work<br />— not just impress —
+                        If you build AI that must work in production —
                     </h2>
                     <p className="text-xl text-neutral-500 font-medium max-w-2xl mx-auto mb-12 leading-relaxed">
-                        I’m open to conversations with teams working on enterprise or high-stakes AI systems who care about production readiness, governance, and real outcomes.
+                        I’m open to conversations around enterprise AI, productization, and execution leadership.
                     </p>
                     <a
                         href="https://linkedin.com/in/sudhanshugiri"
