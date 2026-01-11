@@ -2,77 +2,37 @@
 
 import { motion } from "framer-motion"
 
-const experience = [
-    {
-        company: "Skit.ai",
-        role: "Program & Product Leadership",
-        period: "Recent",
-        desc: "Driving Conversational AI innovations and scaling product delivery in the conversational AI space.",
-        brand: "Conversational AI"
-    },
-    {
-        company: "Bigspring.ai",
-        role: "Enterprise Scaling",
-        period: "Leadership",
-        desc: "Focused on AI-driven enterprise productivity and skill transformation at scale.",
-        brand: "Enterprise AI"
-    },
-    {
-        company: "Bytedance",
-        role: "Product Growth & Scale",
-        period: "Scale Phase",
-        desc: "Orchestrated high-growth initiatives within one of the world's most aggressive technical ecosystems.",
-        brand: "Global Scale"
-    },
-    {
-        company: "Toppr.com",
-        role: "Program Management",
-        period: "EdTech Growth",
-        desc: "Led cross-functional squads to build resilient educational technology products servicing millions.",
-        brand: "EdTech"
-    },
-    {
-        company: "Tech Mahindra (Mahindra Satyam)",
-        role: "Technical Foundations",
-        period: "The Beginning",
-        desc: "Cut my teeth in complex enterprise systems and global service delivery models.",
-        brand: "IT Services"
-    }
-]
-
 export function ProfessionalTrack() {
-    return (
-        <section className="py-24 border-t border-neutral-100">
-            <div className="container mx-auto px-4 max-w-5xl">
-                <div className="text-center mb-16">
-                    <h2 className="text-3xl md:text-5xl font-black text-neutral-900 mb-4 tracking-tighter">
-                        Professional <span className="text-brand-primary">Track.</span>
-                    </h2>
-                    <p className="text-neutral-500 font-medium max-w-2xl mx-auto">
-                        Decade plus of experience across diverse industries and world-class technical ecosystems.
-                    </p>
-                </div>
+    const history = [
+        { role: "Product Leader", company: "Skit.ai", scope: "Conversational AI Leadership" },
+        { role: "Product Manager", company: "Bigspring", scope: "Enterprise AI Enablement" },
+        { role: "Product Manager", company: "ByteDance", scope: "Scale & Platform Growth" },
+        { role: "Product Manager", company: "Toppr", scope: "EdTech Product Delivery" },
+        { role: "Software Engineer", company: "Tech Mahindra", scope: "Enterprise Systems Foundation" }
+    ]
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    {experience.map((exp, index) => (
-                        <motion.div
-                            key={exp.company}
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ delay: index * 0.1 }}
-                            className="p-8 rounded-[2rem] bg-white border border-neutral-100 shadow-sm hover:shadow-xl transition-all group blueprint-card"
-                        >
-                            <div className="flex justify-between items-start mb-6">
-                                <span className="text-[10px] font-black uppercase tracking-[0.2em] text-brand-primary mono-metric">{exp.brand}</span>
-                                <span className="text-[10px] font-bold text-neutral-300 uppercase mono-metric">{exp.period}</span>
+    return (
+        <section className="py-24 bg-white border-t border-neutral-100">
+            <div className="container mx-auto px-4 max-w-4xl">
+                <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                >
+                    <h2 className="text-2xl font-extrabold text-[#0f172a] mb-12 tracking-tight">Professional Track</h2>
+
+                    <div className="space-y-8">
+                        {history.map((item, index) => (
+                            <div key={index} className="flex flex-col md:flex-row md:items-baseline md:justify-between border-b border-neutral-100 pb-4 last:border-0 last:pb-0">
+                                <div className="flex flex-col md:flex-row md:gap-8">
+                                    <span className="text-lg font-bold text-[#0f172a] w-48">{item.role}</span>
+                                    <span className="text-lg font-medium text-slate-700">{item.company}</span>
+                                </div>
+                                <span className="text-base font-normal text-slate-500 mt-1 md:mt-0">{item.scope}</span>
                             </div>
-                            <h3 className="text-xl font-black text-neutral-900 mb-2 group-hover:text-brand-primary transition-colors uppercase tracking-tight">{exp.company}</h3>
-                            <p className="text-sm font-bold text-neutral-500 mb-4">{exp.role}</p>
-                            <p className="text-xs text-neutral-400 leading-relaxed font-medium">{exp.desc}</p>
-                        </motion.div>
-                    ))}
-                </div>
+                        ))}
+                    </div>
+                </motion.div>
             </div>
         </section>
     )

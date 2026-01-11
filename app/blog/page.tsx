@@ -17,11 +17,11 @@ export default function BlogPage() {
             <main className="flex-grow py-16 md:py-24">
                 <div className="container mx-auto px-4">
                     <div className="max-w-3xl mb-16">
-                        <h1 className="text-4xl md:text-7xl font-black text-neutral-900 mb-6 leading-tight">
-                            The <span className="text-brand-primary">Product</span> Journal.
+                        <h1 className="text-4xl md:text-6xl font-black text-[#0f172a] mb-6 tracking-tight">
+                            Writing
                         </h1>
-                        <p className="text-lg text-neutral-600 font-medium leading-relaxed">
-                            This space is for thinking in public — about leadership, systems, and responsibility.
+                        <p className="text-sm md:text-base font-mono text-slate-500 font-medium leading-relaxed uppercase tracking-wide">
+                            Notes on leadership, execution, and AI systems in production.
                         </p>
                     </div>
 

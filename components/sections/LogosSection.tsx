@@ -2,38 +2,23 @@
 
 import { motion } from "framer-motion"
 
-const companies = [
-    { name: "Tech Mahindra", sub: "Mahindra Satyam" },
-    { name: "Bytedance", sub: "TikTok/Toutiao" },
-    { name: "Toppr.com", sub: "EdTech" },
-    { name: "Bigspring.ai", sub: "Enterprise AI" },
-    { name: "Skit.ai", sub: "Conversational AI" }
+const logos = [
+    "Skit.ai", "BigSpring", "ByteDance", "Toppr", "Tech Mahindra"
 ]
 
 export function LogosSection() {
     return (
-        <section className="py-16 bg-white border-y border-neutral-100">
+        <section className="py-12 bg-white border-b border-neutral-100">
             <div className="container mx-auto px-4">
-                <p className="text-center text-[10px] uppercase tracking-[0.3em] font-black text-neutral-400 mb-10">
-                    Experience at Global Industry Leaders
-                </p>
-                <div className="flex flex-wrap justify-center items-center gap-x-12 gap-y-8 opacity-50 contrast-125 grayscale">
-                    {companies.map((company, index) => (
-                        <motion.div
-                            key={company.name}
-                            initial={{ opacity: 0 }}
-                            whileInView={{ opacity: 1 }}
-                            transition={{ delay: index * 0.1 }}
-                            className="flex flex-col items-center"
-                        >
-                            <span className="text-xl md:text-2xl font-black tracking-tighter text-neutral-900 mb-1">
-                                {company.name}
-                            </span>
-                            <span className="text-[8px] font-bold uppercase tracking-widest text-brand-primary mono-metric">
-                                {company.sub}
-                            </span>
-                        </motion.div>
-                    ))}
+                <div className="flex flex-col items-center justify-center space-y-8">
+                    <div className="flex flex-wrap justify-center items-center gap-8 md:gap-16 opacity-80 grayscale hover:grayscale-0 transition-all duration-500">
+                        {logos.map((logo, i) => (
+                            <span key={i} className="text-xl md:text-2xl font-black text-[#0f172a] tracking-tight">{logo}</span>
+                        ))}
+                    </div>
+                    <p className="font-mono text-xs md:text-sm text-slate-500 uppercase tracking-widest">
+                        Enterprise AI • Consumer Platforms • Global Scale
+                    </p>
                 </div>
             </div>
         </section>

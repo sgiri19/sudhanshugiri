@@ -1,45 +1,33 @@
+"use client"
+
 import Link from "next/link"
-import { BlogList } from "@/components/blog/BlogList"
 import { ArrowRight } from "lucide-react"
-import { getAllPosts } from "@/lib/mdx"
+
+const posts = [
+    { title: "Field Marshal Sam Manekshaw: Leadership Under Constraint", slug: "unveiling-leadership-insights-from-field-marshal-sam-manekshaw" },
+    { title: "Why I Build Systems, Not Demos", slug: "scaling-agile" }
+]
 
 export function FeaturedPosts() {
-    const posts = getAllPosts().filter(post => post.featured).slice(0, 3)
-
-    if (posts.length === 0) return null
-
     return (
-        <section className="py-24 border-t border-neutral-100">
-            <div className="container mx-auto px-4">
-                <div className="flex justify-between items-end mb-12">
-                    <div className="max-w-2xl">
-                        <h2 className="text-3xl md:text-5xl font-black text-neutral-900 mb-4 tracking-tight">
-                            Latest <span className="text-brand-primary">Insights.</span>
-                        </h2>
-                        <p className="text-neutral-600 font-medium leading-relaxed">
-                            Deep dives into the mechanics of shipping AI and leading high-stakes programs.
-                        </p>
-                    </div>
-                    <Link
-                        href="/blog"
-                        className="hidden md:flex items-center text-brand-primary font-black uppercase tracking-widest text-xs hover:gap-2 transition-all mono-metric"
-                    >
-                        All Articles
-                        <ArrowRight className="ml-2" size={16} />
+        <section className="py-24 bg-white border-t border-neutral-100">
+            <div className="container mx-auto px-4 max-w-4xl">
+                <div className="flex justify-between items-baseline mb-12">
+                    <h2 className="text-2xl font-extrabold text-[#0f172a] tracking-tight">Writing</h2>
+                    <Link href="/blog" className="text-[#4338ca] font-bold hover:gap-2 transition-all inline-flex items-center">
+                        Read on the Blog <ArrowRight size={18} className="ml-2" />
                     </Link>
                 </div>
 
-                <BlogList posts={posts} from="work" />
-            </div>
-
-            <div className="mt-12 text-center md:hidden">
-                <Link
-                    href="/blog"
-                    className="inline-flex items-center text-brand-primary font-black uppercase tracking-widest text-xs hover:gap-2 transition-all mono-metric"
-                >
-                    All Articles
-                    <ArrowRight className="ml-2" size={16} />
-                </Link>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    {posts.map((post, i) => (
+                        <Link key={i} href={`/blog/${post.slug}`} className="group block p-8 rounded-[2rem] bg-neutral-50 border border-neutral-100 hover:border-[#4338ca] transition-all">
+                            <h3 className="text-xl font-bold text-[#0f172a] group-hover:text-[#4338ca] transition-colors leading-snug">
+                                {post.title}
+                            </h3>
+                        </Link>
+                    ))}
+                </div>
             </div>
         </section>
     )

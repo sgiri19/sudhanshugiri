@@ -1,5 +1,4 @@
-import Link from "next/link"
-import { Linkedin, Twitter, Github, Mail } from "lucide-react"
+import { ArrowRight } from "lucide-react"
 
 export function Footer() {
     const currentYear = new Date().getFullYear()
@@ -7,30 +6,20 @@ export function Footer() {
     return (
         <footer className="border-t border-neutral-100 bg-white">
             <div className="container mx-auto px-4 py-16">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-                    <div>
-                        <Link href="/" className="text-xl font-black tracking-tighter text-neutral-900">
-                            SG<span className="text-brand-primary">.</span>
-                        </Link>
-                        <p className="mt-4 text-sm text-neutral-500 font-medium max-w-sm leading-relaxed">
-                            If you’re building or scaling enterprise AI — and care about production, safety, and outcomes — I’m open to conversations.
+                <div className="flex flex-col md:flex-row justify-between items-center gap-8">
+                    <div className="max-w-xl">
+                        <p className="text-lg md:text-xl font-medium text-[#0f172a] leading-relaxed">
+                            If you’re building AI systems where correctness matters more than hype, let’s connect.
                         </p>
                     </div>
-                    <div className="flex justify-start md:justify-end space-x-8">
-                        <a href="https://linkedin.com/in/sudhanshugiri" target="_blank" rel="noopener noreferrer" className="text-neutral-400 hover:text-brand-primary transition-all hover:scale-110">
-                            <Linkedin size={22} />
-                        </a>
-                        <a href="https://twitter.com/sudhanshugiri" target="_blank" rel="noopener noreferrer" className="text-neutral-400 hover:text-brand-primary transition-all hover:scale-110">
-                            <Twitter size={22} />
+                    <div>
+                        <a href="https://linkedin.com/in/sudhanshugiri" target="_blank" rel="noopener noreferrer" className="inline-flex items-center text-[#4338ca] font-bold text-lg hover:gap-2 transition-all">
+                            LinkedIn <ArrowRight size={20} className="ml-2" />
                         </a>
                     </div>
                 </div>
-                <div className="mt-16 pt-8 border-t border-neutral-50 flex flex-col md:flex-row justify-between items-center text-[10px] font-black uppercase tracking-widest text-neutral-400 space-y-4 md:space-y-0 mono-metric">
-                    <p>© {currentYear} Sudhanshu Giri. Mission Critical Development.</p>
-                    <div className="flex space-x-8">
-                        <Link href="/privacy" className="hover:text-neutral-900 transition-colors">Privacy</Link>
-                        <Link href="/rss.xml" className="hover:text-neutral-900 transition-colors">Insights Feed</Link>
-                    </div>
+                <div className="mt-16 pt-8 border-t border-neutral-50 flex justify-between items-center text-xs font-mono text-slate-400">
+                    <p>© {currentYear} Sudhanshu Giri</p>
                 </div>
             </div>
         </footer>

@@ -1,12 +1,12 @@
 import { Header } from "@/components/layout/Header"
 import { Hero } from "@/components/sections/Hero"
+import { OperatingContext } from "@/components/sections/OperatingContext"
 import { LogosSection } from "@/components/sections/LogosSection"
-import { Grounding } from "@/components/sections/Grounding"
 import { Philosophy } from "@/components/sections/Philosophy"
+import { DecisionFramework } from "@/components/sections/DecisionFramework"
+import { SelectedProductionWork } from "@/components/sections/SelectedProductionWork"
 import { ProfessionalTrack } from "@/components/sections/ProfessionalTrack"
-import { FeaturedCaseStudy } from "@/components/sections/FeaturedCaseStudy"
 import { FeaturedPosts } from "@/components/sections/FeaturedPosts"
-import { ClosingCTA } from "@/components/sections/ClosingCTA"
 import { Footer } from "@/components/layout/Footer"
 
 export default function Home() {
@@ -15,13 +15,13 @@ export default function Home() {
       <Header />
       <main className="flex-grow">
         <Hero />
+        <OperatingContext />
         <LogosSection />
-        <Grounding />
         <Philosophy />
+        <DecisionFramework />
+        <SelectedProductionWork />
         <ProfessionalTrack />
-        <FeaturedCaseStudy />
         <FeaturedPosts />
-        <ClosingCTA />
       </main>
       <Footer />
     </>
