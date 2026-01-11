@@ -21,8 +21,7 @@ export default function BlogPage() {
                             The <span className="text-brand-primary">Product</span> Journal.
                         </h1>
                         <p className="text-lg text-neutral-600 font-medium leading-relaxed">
-                            Deep dives into shipping AI, scaling programs, and technical leadership.
-                            No fluff — just execution.
+                            This space is for thinking in public — about leadership, systems, and responsibility.
                         </p>
                     </div>
 

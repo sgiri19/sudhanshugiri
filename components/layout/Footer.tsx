@@ -12,8 +12,8 @@ export function Footer() {
                         <Link href="/" className="text-xl font-black tracking-tighter text-neutral-900">
                             SG<span className="text-brand-primary">.</span>
                         </Link>
-                        <p className="mt-4 text-sm text-neutral-500 font-medium max-w-xs leading-relaxed">
-                            Productizing Enterprise AI. Safely, scalably, and profitably.
+                        <p className="mt-4 text-sm text-neutral-500 font-medium max-w-sm leading-relaxed">
+                            If you’re building or scaling enterprise AI — and care about production, safety, and outcomes — I’m open to conversations.
                         </p>
                     </div>
                     <div className="flex justify-start md:justify-end space-x-8">

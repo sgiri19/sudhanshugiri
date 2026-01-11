@@ -32,6 +32,29 @@ const staticProjects = [
 export function WorkContent({ initialCaseStudies }: WorkContentProps) {
     return (
         <div className="space-y-16">
+            {/* Scope of Impact - Static Block */}
+            <motion.div
+                initial={{ opacity: 0, y: 10 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                className="p-8 md:p-12 rounded-[2rem] bg-neutral-900 text-white shadow-xl mb-16"
+            >
+                <h3 className="text-sm font-bold uppercase tracking-widest text-brand-primary mb-6 font-heading">Scope of Work (2012–Present)</h3>
+                <ul className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    {[
+                        "Enterprise AI delivery across finance, edtech, and consumer platforms",
+                        "0→1 and 1→N productization strategy",
+                        "Multi-year programs with engineering, data, compliance, and business teams",
+                        "Leadership across squads, delivery managers, and cross-functional stakeholders"
+                    ].map((item, i) => (
+                        <li key={i} className="flex gap-4 text-lg font-medium leading-snug">
+                            <div className="mt-2 h-1.5 w-1.5 bg-brand-primary rounded-full shrink-0 shadow-[0_0_8px_rgba(67,56,202,0.8)]" />
+                            <span>{item}</span>
+                        </li>
+                    ))}
+                </ul>
+            </motion.div>
+
             {/* Dynamic Case Studies from MDX */}
             {initialCaseStudies.map((post, index) => (
                 <motion.div
