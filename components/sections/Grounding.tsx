@@ -12,12 +12,12 @@ export function Grounding() {
                     viewport={{ once: true }}
                     className="prose prose-lg prose-neutral md:prose-xl mx-auto"
                 >
-                    <h2 className="text-[10px] font-black uppercase tracking-[0.2em] text-brand-primary mb-8 mono-metric">Where These Rules Came From</h2>
+                    <h2 className="text-[10px] font-black uppercase tracking-[0.2em] text-brand-primary mb-8 mono-metric">Where These Principles Come From</h2>
                     <p className="font-heading font-bold text-2xl md:text-3xl leading-relaxed text-neutral-900">
-                        I’ve spent over a decade operating at the intersection of AI systems, product delivery, and enterprise constraints — across startups and scaled platforms.
+                        Over the last decade, I’ve worked across consumer platforms, enterprise products, and AI-driven systems — in environments where reliability, compliance, and outcomes mattered more than speed alone.
                     </p>
                     <p className="text-xl md:text-2xl leading-relaxed text-neutral-500 mt-8 font-medium">
-                        These principles weren’t designed. They were earned — in production failures, regulatory reviews, missed SLAs, and shipped systems.
+                        These principles weren’t designed in theory. They were shaped in production incidents, regulatory reviews, missed SLAs, and systems that had to work — every day.
                     </p>
                 </motion.div>
             </div>

@@ -1,7 +1,6 @@
 "use client"
 
 import Image from "next/image"
-import Link from "next/link"
 import { motion } from "framer-motion"
 import { ArrowRight } from "lucide-react"
 
@@ -29,34 +28,17 @@ export function Hero() {
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.5, delay: 0.2 }}
-                        className="max-w-3xl space-y-6"
+                        className="max-w-4xl space-y-6"
                     >
                         <h1 className="text-4xl md:text-7xl font-extrabold tracking-tight text-neutral-900 leading-[1.1]">
                             Productizing <span className="text-brand-primary">Enterprise AI.</span>
                         </h1>
-                        <p className="text-xl md:text-2xl text-neutral-600 font-medium leading-relaxed max-w-2xl mx-auto">
-                            I build AI products that actually <span className="text-neutral-900 font-bold border-b-2 border-brand-primary/20">ship</span> — safely, scalably, and profitably.
+                        <p className="text-xl md:text-3xl text-neutral-600 font-bold leading-relaxed max-w-3xl mx-auto">
+                            From pilot to production — safely, scalably, and with measurable ROI.
                         </p>
-                        <p className="text-lg text-neutral-500 max-w-xl mx-auto">
-                            Specializing in regulated, high-stakes environments where accuracy, explainability, and ROI matter more than demos.
+                        <p className="text-lg md:text-xl text-neutral-500 max-w-2xl mx-auto leading-relaxed">
+                            I work at the intersection of AI systems, product strategy, and delivery execution — helping teams move beyond demos into production-grade systems that actually run the business.
                         </p>
-                        <div className="flex flex-wrap justify-center gap-4 pt-4">
-                            <Link
-                                href="/work"
-                                className="inline-flex items-center px-8 py-4 rounded-2xl bg-brand-primary text-white font-bold hover:bg-brand-primary/90 transition-all shadow-lg shadow-brand-primary/20 hover:scale-[1.02]"
-                            >
-                                View Production Wins
-                                <ArrowRight className="ml-2" size={18} />
-                            </Link>
-                            <a
-                                href="https://linkedin.com/in/sudhanshugiri"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="inline-flex items-center px-8 py-4 rounded-2xl border border-neutral-200 text-neutral-900 font-bold hover:bg-neutral-50 transition-all"
-                            >
-                                Let's Talk Strategy
-                            </a>
-                        </div>
                     </motion.div>
                 </div>
             </div>

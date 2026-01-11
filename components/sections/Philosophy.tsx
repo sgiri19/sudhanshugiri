@@ -5,27 +5,27 @@ import { motion } from "framer-motion"
 const principles = [
     {
         rule: "01",
-        context: "What breaks first in enterprise AI: Proof-of-concepts without ownership.",
-        title: "Production is the only metric.",
-        desc: "Demos are easy. Getting AI into a regulated production environment with 99.9% accuracy is where the value is created."
+        context: "Most AI failures happen after the pilot.",
+        title: "Productize. Don’t demo.",
+        desc: "I focus on turning promising prototypes into systems that can be monitored, governed, and scaled — without collapsing under real usage."
     },
     {
         rule: "02",
-        context: "The trap of modern tech stacks: Building what's cool, not what counts.",
-        title: "ROI > Novelty.",
-        desc: "Technical excellence should serve business outcomes. Every feature shippped must move the needle on churn, retention, or margin."
+        context: "In regulated and high-stakes environments, accuracy alone isn’t enough.",
+        title: "Safety and scale are not trade-offs.",
+        desc: "Systems must be auditable, predictable, and resilient — by design, not by exception."
     },
     {
         rule: "03",
-        context: "In high-stakes industries, 'black box' AI is a liability.",
-        title: "Precision is Non-Negotiable.",
-        desc: "Explainability and governance are not 'nice-to-haves'—they are structural requirements."
+        context: "Roadmaps don’t fail in planning. They fail in execution gaps.",
+        title: "Delivery is a product decision.",
+        desc: "I work where gaps exist between product intent, engineering reality, and customer constraints."
     },
     {
         rule: "04",
-        context: "The failure mode of most product teams: Strategy disconnected from reality.",
-        title: "The Technical Bridge.",
-        desc: "Solving the gap between high-level business strategy and low-level technical execution is the core of successful productization."
+        context: "I don’t optimize for narratives.",
+        title: "Evidence beats opinion. Every time.",
+        desc: "I optimize for metrics that survive production: adoption, reliability, latency, retention, and ROI."
     }
 ]
 
@@ -34,7 +34,7 @@ export function Philosophy() {
         <section className="py-24 border-t border-neutral-100 bg-neutral-50/50">
             <div className="container mx-auto px-4 max-w-5xl">
                 <div className="mb-16">
-                    <h2 className="text-sm font-bold uppercase tracking-widest text-brand-primary mb-4 font-heading">Operational Doctrine</h2>
+                    <h2 className="text-sm font-bold uppercase tracking-widest text-brand-primary mb-4 font-heading">Rules of Operation</h2>
                     <h3 className="text-3xl md:text-5xl font-black text-neutral-900 tracking-tight leading-tight">
                         Execution <span className="text-brand-primary">Philosophy.</span>
                     </h3>

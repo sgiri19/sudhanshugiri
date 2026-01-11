@@ -3,10 +3,11 @@ import { Hero } from "@/components/sections/Hero"
 import { Grounding } from "@/components/sections/Grounding"
 import { LogosSection } from "@/components/sections/LogosSection"
 import { Philosophy } from "@/components/sections/Philosophy"
-import { ProfessionalTrack } from "@/components/sections/ProfessionalTrack"
+import { ScopeOfImpact } from "@/components/sections/ScopeOfImpact"
 import { OperatingManual } from "@/components/sections/OperatingManual"
 import { FeaturedCaseStudy } from "@/components/sections/FeaturedCaseStudy"
 import { FeaturedPosts } from "@/components/sections/FeaturedPosts"
+import { ClosingCTA } from "@/components/sections/ClosingCTA"
 import { Footer } from "@/components/layout/Footer"
 
 export default function Home() {
@@ -18,10 +19,10 @@ export default function Home() {
         <Grounding />
         <LogosSection />
         <Philosophy />
+        <ScopeOfImpact />
         <OperatingManual />
-        <ProfessionalTrack />
         <FeaturedCaseStudy />
-        <FeaturedPosts />
+        <ClosingCTA />
       </main>
       <Footer />
     </>
