@@ -19,7 +19,7 @@ export function BlogCard({ post, index = 0, from }: BlogCardProps) {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.4, delay: index * 0.1 }}
-            className="group relative flex flex-col space-y-4 p-8 rounded-[2rem] border bg-white border-neutral-100 shadow-sm hover:shadow-xl transition-all blueprint-card"
+            className="group relative flex flex-col space-y-4 p-8 md:p-10 rounded-[2rem] border bg-white border-neutral-100 shadow-sm hover:shadow-xl transition-all blueprint-card"
         >
             <div className="space-y-4">
                 <h3 className="text-xl font-bold text-[#0f172a] group-hover:text-[#4338ca] transition-colors leading-tight tracking-tight">

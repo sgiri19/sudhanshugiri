@@ -9,7 +9,7 @@ const logos = [
 export function LogosSection() {
     return (
         <section className="py-12 bg-white border-b border-neutral-100">
-            <div className="container mx-auto px-4">
+            <div className="container mx-auto px-6 md:px-12">
                 <div className="flex flex-col items-center justify-center space-y-8">
                     <div className="flex flex-wrap justify-center items-center gap-8 md:gap-16 opacity-80 grayscale hover:grayscale-0 transition-all duration-500">
                         {logos.map((logo, i) => (

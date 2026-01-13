@@ -59,14 +59,14 @@ export default async function PostPage({
         const { metadata, content } = getPostBySlug(resolvedParams.slug)
 
         const from = resolvedSearchParams.from
-        const backLink = from === 'work' ? '/work' : '/blog'
-        const backText = from === 'work' ? 'Back to Work' : 'Back to Blog'
+        const backLink = from === 'work' ? '/' : '/blog'
+        const backText = from === 'work' ? 'Back to Home' : 'Back to Blog'
 
         return (
             <>
                 <Header />
-                <main className="flex-grow py-16 md:py-24">
-                    <article className="container mx-auto px-4 max-w-4xl">
+                <main className="flex-grow py-24">
+                    <article className="container mx-auto px-6 md:px-12 max-w-4xl">
                         <Link
                             href={backLink}
                             className="inline-flex items-center text-[10px] font-black uppercase tracking-[0.2em] text-neutral-400 hover:text-brand-primary mb-12 transition-all mono-metric group"

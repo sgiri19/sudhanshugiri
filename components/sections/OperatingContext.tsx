@@ -4,15 +4,17 @@ import { motion } from "framer-motion"
 
 export function OperatingContext() {
     return (
-        <section className="py-24 bg-white border-b border-neutral-100">
-            <div className="container mx-auto px-4 max-w-4xl">
+        <section className="pt-12 pb-24 md:pt-16 bg-white border-b border-neutral-100">
+            <div className="container mx-auto px-6 md:px-12 max-w-5xl">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     className="space-y-8"
                 >
-                    <h2 className="text-3xl font-extrabold text-[#4338ca] tracking-tight">Operating Context</h2>
+                    <h2 className="text-4xl md:text-5xl font-black text-[#4338ca] tracking-tighter leading-tight mb-8">
+                        Operating Context
+                    </h2>
 
                     <div className="space-y-6 text-lg md:text-xl text-[#0f172a] leading-relaxed">
                         <p>

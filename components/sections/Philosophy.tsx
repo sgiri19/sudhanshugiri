@@ -23,9 +23,9 @@ const principles = [
 export function Philosophy() {
     return (
         <section className="py-24 bg-white border-b border-neutral-100">
-            <div className="container mx-auto px-4 max-w-5xl">
+            <div className="container mx-auto px-6 md:px-12 max-w-5xl">
                 <div className="mb-16">
-                    <h2 className="text-3xl md:text-5xl font-black text-[#0f172a] tracking-tight leading-tight mb-4">
+                    <h2 className="text-3xl md:text-5xl font-black text-[#4338ca] tracking-tighter leading-tight mb-4">
                         Rules of Operation
                     </h2>
                 </div>

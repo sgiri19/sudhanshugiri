@@ -11,9 +11,9 @@ const posts = [
 export function FeaturedPosts() {
     return (
         <section className="py-24 bg-white border-t border-neutral-100">
-            <div className="container mx-auto px-4 max-w-4xl">
+            <div className="container mx-auto px-6 md:px-12 max-w-5xl">
                 <div className="flex justify-between items-baseline mb-12">
-                    <h2 className="text-2xl font-extrabold text-[#0f172a] tracking-tight">Writing</h2>
+                    <h2 className="text-3xl md:text-4xl font-black text-[#4338ca] tracking-tighter leading-tight">Writing</h2>
                     <Link href="/blog" className="text-[#4338ca] font-bold hover:gap-2 transition-all inline-flex items-center">
                         Read on the Blog <ArrowRight size={18} className="ml-2" />
                     </Link>

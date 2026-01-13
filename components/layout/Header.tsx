@@ -16,10 +16,10 @@ export function Header() {
 
     return (
         <header className="sticky top-0 z-40 w-full border-b border-neutral-100 bg-white/70 backdrop-blur-xl transition-all duration-300">
-            <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="container mx-auto px-6 md:px-12 max-w-5xl">
                 <div className="flex h-16 items-center justify-between">
                     <div className="flex items-center">
-                        <Link href="/" className="text-xl font-black tracking-tighter text-neutral-900 hover:scale-105 transition-transform">
+                        <Link href="/" className="text-2xl font-black tracking-tighter text-neutral-900 hover:scale-105 transition-transform">
                             SG<span className="text-brand-primary">.</span>
                         </Link>
                     </div>

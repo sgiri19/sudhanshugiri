@@ -5,17 +5,17 @@ import { motion } from "framer-motion"
 export function SelectedProductionWork() {
     return (
         <section className="py-24 bg-neutral-50 border-t border-neutral-100">
-            <div className="container mx-auto px-4 max-w-4xl">
+            <div className="container mx-auto px-6 md:px-12 max-w-5xl">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                 >
-                    <h2 className="text-3xl font-extrabold text-[#0f172a] mb-12 tracking-tight">Selected Production Work</h2>
+                    <h2 className="text-4xl md:text-5xl font-black text-[#4338ca] mb-12 tracking-tighter leading-tight">Selected Production Work</h2>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                         {/* Card 01 */}
-                        <div className="blueprint-card bg-white p-8 rounded-[2rem] border border-neutral-100 shadow-sm flex flex-col justify-between">
+                        <div className="blueprint-card bg-white p-8 md:p-10 rounded-[2rem] border border-neutral-100 shadow-sm flex flex-col justify-between">
                             <div>
                                 <div className="mono-metric text-xs font-bold text-slate-500 uppercase tracking-wide mb-4">
                                     Conversational AI | Financial Services
@@ -30,7 +30,7 @@ export function SelectedProductionWork() {
                         </div>
 
                         {/* Card 02 */}
-                        <div className="blueprint-card bg-white p-8 rounded-[2rem] border border-neutral-100 shadow-sm flex flex-col justify-between">
+                        <div className="blueprint-card bg-white p-8 md:p-10 rounded-[2rem] border border-neutral-100 shadow-sm flex flex-col justify-between">
                             <div>
                                 <div className="mono-metric text-xs font-bold text-slate-500 uppercase tracking-wide mb-4">
                                     Enterprise Learning Platforms
