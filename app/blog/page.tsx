@@ -15,9 +15,9 @@ export default function BlogPage() {
         <>
             <Header />
             <main className="flex-grow py-24">
-                <div className="container mx-auto px-6 md:px-12">
+                <div className="container mx-auto px-6 md:px-12 max-w-5xl">
                     <div className="max-w-4xl mb-16">
-                        <h1 className="text-4xl md:text-6xl font-black text-[#0f172a] mb-6 tracking-tight">
+                        <h1 className="text-4xl md:text-6xl font-black text-[#4338ca] mb-6 tracking-tight">
                             Writing
                         </h1>
                         <p className="text-sm md:text-base font-mono text-slate-500 font-medium leading-relaxed uppercase tracking-wide">
