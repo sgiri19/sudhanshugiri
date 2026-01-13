@@ -12,7 +12,7 @@ export default function Home() {
   return (
     <>
       <Header />
-      <main className="flex-grow">
+      <main className="flex-grow max-w-3xl mx-auto w-full border-x border-neutral-100 min-h-screen bg-white">
         <Identity />
         <Briefing />
         <CareerLog />

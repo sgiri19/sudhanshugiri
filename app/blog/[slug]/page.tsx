@@ -65,9 +65,9 @@ export default async function PostPage({
         return (
             <>
                 <Header />
-                <main className="flex-grow py-24">
-                    <article className="container mx-auto px-6 md:px-12 max-w-5xl">
-                        <div className="max-w-4xl mx-auto">
+                <main className="flex-grow max-w-3xl mx-auto w-full border-x border-neutral-100 min-h-screen bg-white">
+                    <article className="py-12 px-6">
+                        <div>
                             <Link
                                 href={backLink}
                                 className="inline-flex items-center text-[10px] font-black uppercase tracking-[0.2em] text-neutral-400 hover:text-brand-primary mb-12 transition-all mono-metric group"
@@ -76,25 +76,17 @@ export default async function PostPage({
                                 {backText}
                             </Link>
 
-                            <header className="mb-16">
-                                <h1 className="text-4xl md:text-7xl font-black text-neutral-900 leading-[1.1] mb-8 tracking-tighter italic">
+                            <header className="mb-12 border-b border-neutral-100 pb-12">
+                                <h1 className="text-3xl md:text-4xl font-bold text-neutral-900 mb-6 leading-tight tracking-tight">
                                     {metadata.title}
                                 </h1>
 
-                                <div className="flex flex-wrap items-center gap-6 text-[10px] font-black uppercase tracking-[0.2em] text-neutral-400 mono-metric">
-                                    <div className="flex items-center gap-2">
-                                        <Calendar size={14} className="text-brand-primary" />
+                                <div className="flex flex-wrap gap-6 text-xs font-mono font-medium text-neutral-500 uppercase tracking-wide">
+                                    <time dateTime={metadata.date}>
                                         {formatDate(metadata.date)}
-                                    </div>
-                                    <div className="h-4 w-px bg-neutral-100 hidden md:block" />
-                                    <div className="flex items-center gap-2 text-brand-primary">
-                                        {metadata.category}
-                                    </div>
-                                    <div className="h-4 w-px bg-neutral-100 hidden md:block" />
-                                    <div className="flex items-center gap-2">
-                                        <Clock size={14} className="text-brand-primary" />
-                                        {metadata.readingTime}
-                                    </div>
+                                    </time>
+                                    <span className="text-neutral-300">/</span>
+                                    <span>{metadata.readingTime}</span>
                                 </div>
                             </header>
 

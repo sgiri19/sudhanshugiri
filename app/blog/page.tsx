@@ -14,14 +14,14 @@ export default function BlogPage() {
     return (
         <>
             <Header />
-            <main className="flex-grow py-24">
-                <div className="container mx-auto px-6 md:px-12 max-w-5xl">
-                    <div className="max-w-4xl mb-16">
-                        <h1 className="text-4xl md:text-6xl font-black text-[#4338ca] mb-6 tracking-tight">
-                            Writing
+            <main className="flex-grow max-w-3xl mx-auto w-full border-x border-neutral-100 min-h-screen bg-white">
+                <div className="py-12 px-6">
+                    <div className="mb-12 border-b border-neutral-100 pb-12">
+                        <h1 className="text-4xl md:text-5xl font-bold text-[#4338ca] mb-4 tracking-tighter">
+                            Strategic Archive
                         </h1>
-                        <p className="text-sm md:text-base font-mono text-slate-500 font-medium leading-relaxed uppercase tracking-wide">
-                            Notes on leadership, execution, and AI systems in production.
+                        <p className="text-lg text-neutral-600 font-medium">
+                            Observations on systems, governance, and AI scaling.
                         </p>
                     </div>
 

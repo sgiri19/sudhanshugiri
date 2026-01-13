@@ -15,27 +15,22 @@ export function Header() {
     const pathname = usePathname()
 
     return (
-        <header className="sticky top-0 z-40 w-full border-b border-neutral-100 bg-white/70 backdrop-blur-xl transition-all duration-300">
-            <div className="container mx-auto px-6 md:px-12 max-w-5xl">
-                <div className="flex h-16 items-center justify-between">
+        <header className="sticky top-0 z-40 w-full bg-white/80 backdrop-blur-md border-b border-neutral-100">
+            <div className="container mx-auto px-6 max-w-3xl">
+                <div className="flex h-14 items-center justify-between">
                     <div className="flex items-center">
-                        <Link href="/" className="text-2xl font-black tracking-tighter text-neutral-900 hover:scale-105 transition-transform">
-                            SG<span className="text-brand-primary">.</span>
+                        <Link href="/" className="text-xl font-bold tracking-tight text-neutral-900 hover:text-[#4338ca] transition-colors">
+                            SG.
                         </Link>
                     </div>
 
                     {/* Desktop Navigation */}
-                    <nav className="hidden md:flex items-center space-x-10">
+                    <nav className="hidden md:flex items-center gap-6">
                         {navItems.map((item) => (
                             <Link
                                 key={item.href}
                                 href={item.href}
-                                className={cn(
-                                    "text-[10px] font-black uppercase tracking-[0.2em] transition-all hover:text-brand-primary mono-metric",
-                                    pathname === item.href
-                                        ? "text-neutral-900 underline decoration-brand-primary decoration-2 underline-offset-8"
-                                        : "text-neutral-500"
-                                )}
+                                className="text-sm font-medium text-neutral-600 hover:text-[#4338ca] transition-colors"
                             >
                                 {item.name}
                             </Link>
@@ -44,9 +39,9 @@ export function Header() {
                             href="https://linkedin.com/in/sudhanshugiri"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="px-6 py-2.5 rounded-full bg-brand-primary text-white text-[10px] font-black uppercase tracking-[0.2em] hover:bg-brand-primary/90 transition-all shadow-lg shadow-brand-primary/20 mono-metric"
+                            className="text-sm font-medium text-neutral-600 hover:text-[#4338ca] transition-colors"
                         >
-                            Connect
+                            Protocol
                         </a>
                     </nav>
 

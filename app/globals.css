@@ -13,10 +13,7 @@
 :root {
   --background: #ffffff;
   --foreground: #0f172a;
-  --brand-primary: #4338ca;
-  --brand-secondary: #0f172a;
-  --brand-accent: #10b981;
-  --grid-color: rgba(67, 56, 202, 0.015);
+  --grid-color: rgba(67, 56, 202, 0.01);
 }
 
 @layer base {
@@ -30,7 +27,7 @@
     background-image:
       linear-gradient(var(--grid-color) 1px, transparent 1px),
       linear-gradient(90deg, var(--grid-color) 1px, transparent 1px);
-    background-size: 40px 40px;
+    background-size: 60px 60px;
   }
 
   h1,
@@ -47,10 +44,7 @@
   font-variant-numeric: tabular-nums;
 }
 
-.blueprint-card {
-  @apply relative overflow-hidden bg-white border-b border-neutral-200 transition-colors duration-200;
-}
-
-.blueprint-card:hover {
-  @apply bg-neutral-50;
+/* Utilities for the flat document style */
+.prose-section {
+  @apply py-12 border-b border-neutral-100 last:border-0;
 }

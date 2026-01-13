@@ -1,22 +1,28 @@
-import Link from "next/link"
+import Image from "next/image"
 
 export function Identity() {
     return (
-        <section className="pt-32 pb-16 md:pt-48 md:pb-24">
-            <div className="container mx-auto px-6 md:px-12 max-w-5xl">
-                <div className="max-w-3xl">
-                    <h1 className="text-6xl md:text-9xl font-bold tracking-tighter text-[#4338ca] mb-6 leading-none">
-                        SG.
-                    </h1>
-                    <div className="space-y-2 md:space-y-4">
-                        <h2 className="text-2xl md:text-4xl font-medium tracking-tight text-neutral-900 leading-tight">
-                            Program Product Leader <span className="text-neutral-300">|</span> Enterprise AI
-                        </h2>
-                        <p className="font-mono text-sm md:text-lg text-neutral-600 tracking-wide">
-                            Productizing AI for high-stakes environments.
-                        </p>
-                    </div>
-                </div>
+        <section className="py-20 flex flex-col-reverse md:flex-row md:items-center md:justify-between gap-8 border-b border-neutral-100">
+            <div className="flex-1">
+                <h1 className="text-4xl md:text-5xl font-bold tracking-tighter text-[#4338ca] mb-2 leading-none">
+                    SG.
+                </h1>
+                <h2 className="text-xl md:text-2xl font-medium tracking-tight text-neutral-900">
+                    Program Product Leader
+                </h2>
+                <p className="font-mono text-xs md:text-sm text-neutral-500 mt-2 tracking-wide uppercase">
+                    Productizing AI for high-stakes environments
+                </p>
+            </div>
+
+            <div className="relative w-14 h-14 shrink-0 rounded-full overflow-hidden border border-[#4338ca]">
+                <Image
+                    src="/profile.webp"
+                    alt="Sudhanshu Giri"
+                    fill
+                    className="object-cover"
+                    priority
+                />
             </div>
         </section>
     )
