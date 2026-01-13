@@ -1,4 +1,4 @@
-# Website Codebase Snapshot - Standardized Alignment
+# Website Codebase Snapshot - System Architect Pivot
 
 ## Directory Structure
 ```
@@ -8,6 +8,7 @@ api
 blog
 favicon.ico
 globals.css
+icon.png
 layout.tsx
 page.tsx
 work
@@ -38,6 +39,11 @@ page.tsx
 app/work:
 page.tsx
 
+branding:
+sg-logo-checkerboard.png
+sg-logo-standard.png
+sg-logo-white.png
+
 components:
 blog
 layout
@@ -53,16 +59,20 @@ Footer.tsx
 Header.tsx
 
 components/sections:
+Briefing.tsx
+CareerLog.tsx
 ClosingCTA.tsx
 DecisionFramework.tsx
 FeaturedCaseStudy.tsx
 FeaturedPosts.tsx
 Grounding.tsx
 Hero.tsx
+Identity.tsx
 LogosSection.tsx
 Milestones.tsx
 OperatingContext.tsx
 OperatingManual.tsx
+OperatingPrinciples.tsx
 Philosophy.tsx
 ProfessionalTrack.tsx
 ScopeOfImpact.tsx
@@ -79,28 +89,26 @@ components/ui:
 ## app/page.tsx
 ```tsx
 import { Header } from "@/components/layout/Header"
-import { Hero } from "@/components/sections/Hero"
-import { OperatingContext } from "@/components/sections/OperatingContext"
-import { LogosSection } from "@/components/sections/LogosSection"
-import { Philosophy } from "@/components/sections/Philosophy"
-import { DecisionFramework } from "@/components/sections/DecisionFramework"
-import { SelectedProductionWork } from "@/components/sections/SelectedProductionWork"
-import { ProfessionalTrack } from "@/components/sections/ProfessionalTrack"
-import { FeaturedPosts } from "@/components/sections/FeaturedPosts"
 import { Footer } from "@/components/layout/Footer"
+import { Identity } from "@/components/sections/Identity"
+import { Briefing } from "@/components/sections/Briefing"
+import { CareerLog } from "@/components/sections/CareerLog"
+import { SelectedProductionWork } from "@/components/sections/SelectedProductionWork"
+import { OperatingPrinciples } from "@/components/sections/OperatingPrinciples"
+import { DecisionFramework } from "@/components/sections/DecisionFramework"
+import { FeaturedPosts } from "@/components/sections/FeaturedPosts"
 
 export default function Home() {
   return (
     <>
       <Header />
       <main className="flex-grow">
-        <Hero />
-        <OperatingContext />
-        <LogosSection />
-        <Philosophy />
-        <DecisionFramework />
+        <Identity />
+        <Briefing />
+        <CareerLog />
         <SelectedProductionWork />
-        <ProfessionalTrack />
+        <OperatingPrinciples />
+        <DecisionFramework />
         <FeaturedPosts />
       </main>
       <Footer />
@@ -154,11 +162,11 @@ export default function RootLayout({
   --brand-primary: #4338ca;
   --brand-secondary: #0f172a;
   --brand-accent: #10b981;
-  --grid-color: rgba(67, 56, 202, 0.02);
+  --grid-color: rgba(67, 56, 202, 0.015);
 }
 
 @layer base {
-  @import url('https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;600;700;800&family=JetBrains+Mono:wght@400;700&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap');
 
   body {
     background-color: var(--background);
@@ -168,8 +176,7 @@ export default function RootLayout({
     background-image:
       linear-gradient(var(--grid-color) 1px, transparent 1px),
       linear-gradient(90deg, var(--grid-color) 1px, transparent 1px);
-    background-size: 60px 60px;
-    /* Larger, cleaner grid */
+    background-size: 40px 40px;
   }
 
   h1,
@@ -177,7 +184,7 @@ export default function RootLayout({
   h3,
   h4,
   .font-heading {
-    @apply font-black tracking-tight text-neutral-900;
+    @apply font-bold tracking-tight text-neutral-900;
   }
 }
 
@@ -187,13 +194,11 @@ export default function RootLayout({
 }
 
 .blueprint-card {
-  @apply relative overflow-hidden bg-white border border-neutral-100 shadow-sm transition-all duration-300;
-  background-image: radial-gradient(circle at 1.5px 1.5px, rgba(67, 56, 202, 0.03) 1px, transparent 0);
-  background-size: 32px 32px;
+  @apply relative overflow-hidden bg-white border-b border-neutral-200 transition-colors duration-200;
 }
 
 .blueprint-card:hover {
-  @apply border-brand-primary/20 shadow-2xl shadow-brand-primary/5;
+  @apply bg-neutral-50;
 }```
 
 ## app/blog/page.tsx
@@ -215,9 +220,9 @@ export default function BlogPage() {
         <>
             <Header />
             <main className="flex-grow py-24">
-                <div className="container mx-auto px-6 md:px-12">
+                <div className="container mx-auto px-6 md:px-12 max-w-5xl">
                     <div className="max-w-4xl mb-16">
-                        <h1 className="text-4xl md:text-6xl font-black text-[#0f172a] mb-6 tracking-tight">
+                        <h1 className="text-4xl md:text-6xl font-black text-[#4338ca] mb-6 tracking-tight">
                             Writing
                         </h1>
                         <p className="text-sm md:text-base font-mono text-slate-500 font-medium leading-relaxed uppercase tracking-wide">
@@ -343,28 +348,53 @@ export function Header() {
 
 ## components/layout/Footer.tsx
 ```tsx
-import { ArrowRight } from "lucide-react"
-
 export function Footer() {
-    const currentYear = new Date().getFullYear()
-
     return (
-        <footer className="border-t border-neutral-100 bg-white">
-            <div className="container mx-auto px-6 md:px-12 max-w-5xl py-16">
-                <div className="flex flex-col md:flex-row justify-between items-center gap-8">
-                    <div className="max-w-xl">
-                        <p className="text-lg md:text-xl font-medium text-[#0f172a] leading-relaxed">
-                            If you’re building AI systems where correctness matters more than hype, let’s connect.
+        <footer className="border-t border-neutral-200 bg-white pt-16 pb-24">
+            <div className="container mx-auto px-6 md:px-12 max-w-5xl">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-24">
+                    <div>
+                        <h5 className="font-mono text-xs font-bold text-neutral-400 uppercase tracking-widest mb-6">
+                            Construct
+                        </h5>
+                        <p className="text-2xl font-bold text-[#4338ca] leading-tight max-w-sm">
+                            Building the systems that make AI profitable.
                         </p>
                     </div>
                     <div>
-                        <a href="https://linkedin.com/in/sudhanshugiri" target="_blank" rel="noopener noreferrer" className="inline-flex items-center text-[#4338ca] font-bold text-lg hover:gap-2 transition-all">
-                            LinkedIn <ArrowRight size={20} className="ml-2" />
-                        </a>
+                        <h5 className="font-mono text-xs font-bold text-neutral-400 uppercase tracking-widest mb-6">
+                            Protocol
+                        </h5>
+                        <div className="space-y-4">
+                            <a href="https://linkedin.com/in/sudhanshugiri" target="_blank" rel="noopener noreferrer" className="block text-lg font-bold text-neutral-900 hover:text-[#4338ca]">
+                                LinkedIn <span className="text-neutral-300">/</span> Strategic Advisory
+                            </a>
+                            <a href="mailto:contact@sudhanshugiri.com" className="block text-lg font-bold text-neutral-900 hover:text-[#4338ca]">
+                                Email <span className="text-neutral-300">/</span> Direct Comms
+                            </a>
+                        </div>
                     </div>
                 </div>
-                <div className="mt-16 pt-8 border-t border-neutral-50 flex justify-between items-center text-xs font-mono text-slate-400">
-                    <p>© {currentYear} Sudhanshu Giri</p>
+
+                {/* System Status Bar */}
+                <div className="border-t border-neutral-100 pt-8 flex flex-col md:flex-row md:items-center justify-between gap-6 font-mono text-xs font-bold text-neutral-500 uppercase tracking-wider">
+                    <div className="flex flex-col md:flex-row gap-4 md:gap-8">
+                        <div>
+                            <span className="text-neutral-300 mr-2">STATUS:</span>
+                            <span className="text-[#10b981]">Active Deployment @ Skit.ai</span>
+                        </div>
+                        <div>
+                            <span className="text-neutral-300 mr-2">LOC:</span>
+                            Bengaluru, IN
+                        </div>
+                        <div>
+                            <span className="text-neutral-300 mr-2">FOCUS:</span>
+                            Conversational AI Governance
+                        </div>
+                    </div>
+                    <div>
+                        SG. © 2026
+                    </div>
                 </div>
             </div>
         </footer>
@@ -372,128 +402,125 @@ export function Footer() {
 }
 ```
 
-## components/sections/Hero.tsx
+## components/sections/Identity.tsx
 ```tsx
-"use client"
-
-import Image from "next/image"
 import Link from "next/link"
-import { motion } from "framer-motion"
-import { ArrowRight } from "lucide-react"
 
-export function Hero() {
+export function Identity() {
     return (
-        <section className="pt-24 pb-12 md:pt-32 md:pb-16">
+        <section className="pt-32 pb-16 md:pt-48 md:pb-24">
             <div className="container mx-auto px-6 md:px-12 max-w-5xl">
-                <div className="flex flex-col-reverse md:flex-row items-center gap-12 md:gap-24">
-                    <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.5 }}
-                        className="w-full md:max-w-2xl space-y-6"
-                    >
-                        <h1 className="text-5xl md:text-7xl font-black tracking-tighter text-[#4338ca] leading-[1.1]">
-                            Productizing Enterprise AI.
-                        </h1>
-                        <p className="text-xl md:text-2xl text-[#0f172a] font-medium leading-relaxed">
-                            From pilot to production — safely, scalably, and profitably.
+                <div className="max-w-3xl">
+                    <h1 className="text-6xl md:text-9xl font-bold tracking-tighter text-[#4338ca] mb-6 leading-none">
+                        SG.
+                    </h1>
+                    <div className="space-y-2 md:space-y-4">
+                        <h2 className="text-2xl md:text-4xl font-medium tracking-tight text-neutral-900 leading-tight">
+                            Program Product Leader <span className="text-neutral-300">|</span> Enterprise AI
+                        </h2>
+                        <p className="font-mono text-sm md:text-lg text-neutral-600 tracking-wide">
+                            Productizing AI for high-stakes environments.
                         </p>
-                        <p className="font-mono text-sm md:text-base text-[#0f172a]/70 tracking-wide">
-                            AI Product & Delivery Leader | Regulated & High-Stakes Systems
-                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    )
+}
+```
 
-                        <div className="pt-2">
-                            <a
-                                href="https://linkedin.com/in/sudhanshugiri"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="inline-flex items-center text-[#4338ca] font-bold hover:gap-2 transition-all group"
-                            >
-                                Connect on LinkedIn
-                                <ArrowRight size={20} className="ml-2 transition-transform group-hover:translate-x-1" />
-                            </a>
+## components/sections/Briefing.tsx
+```tsx
+export function Briefing() {
+    return (
+        <section className="py-16 md:py-24 border-t border-neutral-200">
+            <div className="container mx-auto px-6 md:px-12 max-w-5xl">
+                <div className="grid grid-cols-1 md:grid-cols-12 gap-12">
+                    <div className="md:col-span-3">
+                        <span className="font-mono text-xs font-bold tracking-widest text-neutral-400 uppercase">
+                            01 / Briefing
+                        </span>
+                    </div>
+                    <div className="md:col-span-9 max-w-2xl">
+                        <div className="prose prose-lg md:prose-xl prose-neutral font-medium text-neutral-800 leading-relaxed">
+                            <p>
+                                I spent a decade at places like <span className="font-bold text-[#0f172a]">ByteDance</span> and <span className="font-bold text-[#0f172a]">Skit.ai</span> learning one thing:
+                            </p>
+                            <p className="border-l-4 border-[#4338ca] pl-6 italic text-neutral-900">
+                                Success isn't in the model; it's in the system.
+                            </p>
+                            <p>
+                                When you are deploying AI in regulated, high-stakes environments, the "demo" doesn't matter. What matters is observability, governance, and the ability to scale without breaking.
+                            </p>
+                            <p>
+                                I build the systems that make AI profitable, not just possible.
+                            </p>
                         </div>
-                    </motion.div>
-
-                    <motion.div
-                        initial={{ opacity: 0, scale: 0.95 }}
-                        animate={{ opacity: 1, scale: 1 }}
-                        transition={{ duration: 0.5, delay: 0.2 }}
-                        className="relative w-40 h-40 md:w-64 md:h-64 shrink-0 rounded-full overflow-hidden border-4 border-neutral-50 shadow-xl shadow-indigo-500/10"
-                    >
-                        <Image
-                            src="/profile.webp"
-                            alt="Sudhanshu Giri"
-                            fill
-                            className="object-cover"
-                            priority
-                        />
-                    </motion.div>
+                    </div>
                 </div>
             </div>
-        </section >
+        </section>
     )
 }
 ```
 
-## components/sections/OperatingContext.tsx
+## components/sections/CareerLog.tsx
 ```tsx
 "use client"
 
 import { motion } from "framer-motion"
 
-export function OperatingContext() {
+export function CareerLog() {
+    const history = [
+        { period: "2023–Present", role: "Product Leader", company: "Skit.ai", scope: "Led conversational AI across regulated financial deployments" },
+        { period: "2022–2023", role: "Program Manager", company: "BigSpring", scope: "Scaled AI platform adoption across enterprise customers" },
+        { period: "2021–2022", role: "Product Manager", company: "ByteDance", scope: "Drove growth initiatives on global consumer platforms" },
+        { period: "2019–2021", role: "Associate Program Manager", company: "Toppr", scope: "Delivered learner-facing product experiences at scale" },
+        { period: "2016–2019", role: "Software Engineer", company: "Tech Mahindra", scope: "Built enterprise integration systems" }
+    ]
+
     return (
-        <section className="pt-12 pb-24 md:pt-16 bg-white border-b border-neutral-100">
+        <section className="py-24 border-t border-neutral-200">
             <div className="container mx-auto px-6 md:px-12 max-w-5xl">
-                <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    className="space-y-8"
-                >
-                    <h2 className="text-4xl md:text-5xl font-black text-[#4338ca] tracking-tighter leading-tight mb-8">
-                        Operating Context
-                    </h2>
-
-                    <div className="space-y-6 text-lg md:text-xl text-[#0f172a] leading-relaxed">
-                        <p>
-                            I work at the intersection of product, delivery, and execution, building AI systems where the cost of failure is real — financial, operational, and reputational.
-                        </p>
-                        <p className="text-slate-600">
-                            Over a decade of leading large-scale programs across enterprise platforms, data operations, and AI deployments has shaped how I approach decisions: prioritize safety, design for scale, and optimize for long-term system health over short-term wins.
-                        </p>
+                <div className="grid grid-cols-1 md:grid-cols-12 gap-12">
+                    <div className="md:col-span-3">
+                        <span className="font-mono text-xs font-bold tracking-widest text-neutral-400 uppercase">
+                            03 / Log
+                        </span>
                     </div>
-                </motion.div>
-            </div>
-        </section>
-    )
-}
-```
-
-## components/sections/LogosSection.tsx
-```tsx
-"use client"
-
-import { motion } from "framer-motion"
-
-const logos = [
-    "Skit.ai", "BigSpring", "ByteDance", "Toppr", "Tech Mahindra"
-]
-
-export function LogosSection() {
-    return (
-        <section className="py-12 bg-white border-b border-neutral-100">
-            <div className="container mx-auto px-6 md:px-12">
-                <div className="flex flex-col items-center justify-center space-y-8">
-                    <div className="flex flex-wrap justify-center items-center gap-8 md:gap-16 opacity-80 grayscale hover:grayscale-0 transition-all duration-500">
-                        {logos.map((logo, i) => (
-                            <span key={i} className="text-xl md:text-2xl font-black text-[#0f172a] tracking-tight">{logo}</span>
-                        ))}
+                    <div className="md:col-span-9">
+                        <div className="space-y-0">
+                            {history.map((item, index) => (
+                                <motion.div
+                                    key={index}
+                                    initial={{ opacity: 0, y: 10 }}
+                                    whileInView={{ opacity: 1, y: 0 }}
+                                    viewport={{ once: true }}
+                                    transition={{ delay: index * 0.1 }}
+                                    className="group grid grid-cols-1 md:grid-cols-12 gap-4 py-4 border-b border-neutral-100 hover:bg-neutral-50 transition-colors cursor-default"
+                                >
+                                    <div className="md:col-span-3">
+                                        <span className="font-mono text-sm text-neutral-500 group-hover:text-brand-primary transition-colors">
+                                            {item.period}
+                                        </span>
+                                    </div>
+                                    <div className="md:col-span-9 flex flex-col md:flex-row md:justify-between md:items-baseline gap-2">
+                                        <div>
+                                            <span className="font-bold text-neutral-900 block md:inline md:mr-2">
+                                                {item.company}
+                                            </span>
+                                            <span className="text-neutral-600">
+                                                {item.role}
+                                            </span>
+                                        </div>
+                                        <span className="text-sm text-neutral-400 hidden md:block">
+                                            {item.scope}
+                                        </span>
+                                    </div>
+                                </motion.div>
+                            ))}
+                        </div>
                     </div>
-                    <p className="mono-metric text-xs md:text-sm text-slate-500 uppercase tracking-widest">
-                        Enterprise AI • Consumer Platforms • Global Scale
-                    </p>
                 </div>
             </div>
         </section>
@@ -501,7 +528,7 @@ export function LogosSection() {
 }
 ```
 
-## components/sections/Philosophy.tsx
+## components/sections/OperatingPrinciples.tsx
 ```tsx
 "use client"
 
@@ -525,76 +552,45 @@ const principles = [
     }
 ]
 
-export function Philosophy() {
+export function OperatingPrinciples() {
     return (
-        <section className="py-24 bg-white border-b border-neutral-100">
+        <section className="py-24 border-t border-neutral-200">
             <div className="container mx-auto px-6 md:px-12 max-w-5xl">
-                <div className="mb-16">
-                    <h2 className="text-3xl md:text-5xl font-black text-[#4338ca] tracking-tighter leading-tight mb-4">
-                        Rules of Operation
-                    </h2>
-                </div>
-
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    {principles.map((item, i) => (
-                        <motion.div
-                            key={item.rule}
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ delay: i * 0.1 }}
-                            className="p-8 rounded-[2rem] bg-white border border-neutral-100 shadow-sm blueprint-card hover:border-[#4338ca] hover:shadow-lg transition-all"
-                        >
-                            <span className="mono-metric text-sm font-bold text-[#4338ca] uppercase tracking-wider mb-4 block">
-                                RULE {item.rule}
-                            </span>
-                            <h4 className="text-xl font-bold text-[#0f172a] mb-4 tracking-tight leading-snug">
-                                {item.title}
-                            </h4>
-                            <p className="text-slate-600 font-medium leading-relaxed">
-                                {item.desc}
-                            </p>
-                        </motion.div>
-                    ))}
-                </div>
-            </div>
-        </section>
-    )
-}
-```
-
-## components/sections/DecisionFramework.tsx
-```tsx
-"use client"
-
-import { motion } from "framer-motion"
-
-export function DecisionFramework() {
-    return (
-        <section className="py-24 bg-white border-t border-neutral-100">
-            <div className="container mx-auto px-6 md:px-12 max-w-5xl">
-                <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                >
-                    <h2 className="text-4xl md:text-5xl font-black text-[#4338ca] mb-8 tracking-tighter leading-tight">How I Make Decisions</h2>
-                    <p className="text-lg text-slate-600 mb-12">When ambiguity is high and stakes are real, I optimize for:</p>
-
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                        {[
-                            { label: "Stability", desc: "Long-term system reliability over short-term wins" },
-                            { label: "Signal", desc: "Evidence from production over opinions" },
-                            { label: "Constraints", desc: "Explicit trade-offs around cost, latency, and risk" },
-                            { label: "Ownership", desc: "Clear accountability over consensus" }
-                        ].map((item, i) => (
-                            <div key={i} className="flex flex-col space-y-2">
-                                <span className="mono-metric text-sm font-bold text-[#4338ca] uppercase tracking-wider">{item.label}</span>
-                                <p className="text-lg font-medium text-[#0f172a] leading-snug">{item.desc}</p>
-                            </div>
-                        ))}
+                <div className="grid grid-cols-1 md:grid-cols-12 gap-12">
+                    <div className="md:col-span-3">
+                        <span className="font-mono text-xs font-bold tracking-widest text-neutral-400 uppercase">
+                            02 / Principles
+                        </span>
                     </div>
-                </motion.div>
+                    <div className="md:col-span-9">
+                        <div className="grid grid-cols-1 gap-12">
+                            {principles.map((item, i) => (
+                                <motion.div
+                                    key={item.rule}
+                                    initial={{ opacity: 0, y: 10 }}
+                                    whileInView={{ opacity: 1, y: 0 }}
+                                    viewport={{ once: true }}
+                                    transition={{ delay: i * 0.1 }}
+                                    className="grid grid-cols-1 md:grid-cols-12 gap-6"
+                                >
+                                    <div className="md:col-span-2">
+                                        <span className="font-mono text-sm font-bold text-brand-primary uppercase">
+                                            RULE {item.rule}
+                                        </span>
+                                    </div>
+                                    <div className="md:col-span-10">
+                                        <h4 className="text-xl font-bold text-neutral-900 mb-2">
+                                            {item.title}
+                                        </h4>
+                                        <p className="text-neutral-600 leading-relaxed max-w-2xl">
+                                            {item.desc}
+                                        </p>
+                                    </div>
+                                </motion.div>
+                            ))}
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
     )
@@ -656,21 +652,13 @@ export function SelectedProductionWork() {
 }
 ```
 
-## components/sections/ProfessionalTrack.tsx
+## components/sections/DecisionFramework.tsx
 ```tsx
 "use client"
 
 import { motion } from "framer-motion"
 
-export function ProfessionalTrack() {
-    const history = [
-        { role: "Product Leader", company: "Skit.ai", scope: "Led conversational AI across regulated financial deployments" },
-        { role: "Program Manager", company: "BigSpring", scope: "Scaled AI platform adoption across enterprise customers" },
-        { role: "Product Manager", company: "ByteDance", scope: "Drove growth initiatives on global consumer platforms" },
-        { role: "Associate Program Manager", company: "Toppr", scope: "Delivered learner-facing product experiences at scale" },
-        { role: "Software Engineer", company: "Tech Mahindra", scope: "Built enterprise integration systems" }
-    ]
-
+export function DecisionFramework() {
     return (
         <section className="py-24 bg-white border-t border-neutral-100">
             <div className="container mx-auto px-6 md:px-12 max-w-5xl">
@@ -679,16 +667,19 @@ export function ProfessionalTrack() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                 >
-                    <h2 className="text-3xl md:text-4xl font-black text-[#4338ca] mb-12 tracking-tighter leading-tight">Professional Track</h2>
+                    <h2 className="text-4xl md:text-5xl font-black text-[#4338ca] mb-8 tracking-tighter leading-tight">How I Make Decisions</h2>
+                    <p className="text-lg text-slate-600 mb-12">When ambiguity is high and stakes are real, I optimize for:</p>
 
-                    <div className="space-y-8">
-                        {history.map((item, index) => (
-                            <div key={index} className="flex flex-col md:flex-row md:items-baseline md:justify-between border-b border-neutral-100 pb-4 last:border-0 last:pb-0">
-                                <div className="flex flex-col md:flex-row md:gap-8">
-                                    <span className="text-lg font-bold text-[#0f172a] w-48">{item.role}</span>
-                                    <span className="text-lg font-medium text-slate-700">{item.company}</span>
-                                </div>
-                                <span className="text-base font-normal text-slate-500 mt-1 md:mt-0">{item.scope}</span>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        {[
+                            { label: "Stability", desc: "Long-term system reliability over short-term wins" },
+                            { label: "Signal", desc: "Evidence from production over opinions" },
+                            { label: "Constraints", desc: "Explicit trade-offs around cost, latency, and risk" },
+                            { label: "Ownership", desc: "Clear accountability over consensus" }
+                        ].map((item, i) => (
+                            <div key={i} className="flex flex-col space-y-2">
+                                <span className="mono-metric text-sm font-bold text-[#4338ca] uppercase tracking-wider">{item.label}</span>
+                                <p className="text-lg font-medium text-[#0f172a] leading-snug">{item.desc}</p>
                             </div>
                         ))}
                     </div>
@@ -707,32 +698,115 @@ import Link from "next/link"
 import { ArrowRight } from "lucide-react"
 
 const posts = [
-    { title: "Field Marshal Sam Manekshaw: Leadership Under Constraint", slug: "unveiling-leadership-insights-from-field-marshal-sam-manekshaw" },
-    { title: "Why I Build Systems, Not Demos", slug: "scaling-agile" }
+    { title: "Field Marshal Sam Manekshaw: Leadership Under Constraint", date: "Jan 2026", slug: "unveiling-leadership-insights-from-field-marshal-sam-manekshaw" },
+    { title: "Why I Build Systems, Not Demos", date: "Dec 2025", slug: "scaling-agile" }
 ]
 
 export function FeaturedPosts() {
     return (
-        <section className="py-24 bg-white border-t border-neutral-100">
+        <section className="py-24 border-t border-neutral-200">
             <div className="container mx-auto px-6 md:px-12 max-w-5xl">
-                <div className="flex justify-between items-baseline mb-12">
-                    <h2 className="text-3xl md:text-4xl font-black text-[#4338ca] tracking-tighter leading-tight">Writing</h2>
-                    <Link href="/blog" className="text-[#4338ca] font-bold hover:gap-2 transition-all inline-flex items-center">
-                        Read on the Blog <ArrowRight size={18} className="ml-2" />
-                    </Link>
-                </div>
-
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    {posts.map((post, i) => (
-                        <Link key={i} href={`/blog/${post.slug}`} className="group block p-8 rounded-[2rem] bg-neutral-50 border border-neutral-100 hover:border-[#4338ca] transition-all">
-                            <h3 className="text-xl font-bold text-[#0f172a] group-hover:text-[#4338ca] transition-colors leading-snug">
-                                {post.title}
-                            </h3>
-                        </Link>
-                    ))}
+                <div className="grid grid-cols-1 md:grid-cols-12 gap-12">
+                    <div className="md:col-span-3">
+                        <span className="font-mono text-xs font-bold tracking-widest text-neutral-400 uppercase">
+                            05 / Writing
+                        </span>
+                    </div>
+                    <div className="md:col-span-9">
+                        <div className="space-y-0">
+                            {posts.map((post, i) => (
+                                <Link key={i} href={`/blog/${post.slug}`} className="group block py-6 border-b border-neutral-100 last:border-0 hover:bg-neutral-50 transition-colors">
+                                    <div className="flex flex-col md:flex-row md:items-baseline md:justify-between gap-2">
+                                        <h3 className="text-xl font-bold text-neutral-900 group-hover:text-[#4338ca] transition-colors">
+                                            {post.title}
+                                        </h3>
+                                        <span className="font-mono text-sm text-neutral-400 group-hover:text-brand-primary transition-colors">
+                                            {post.date}
+                                        </span>
+                                    </div>
+                                </Link>
+                            ))}
+                            <div className="pt-8">
+                                <Link href="/blog" className="text-[#4338ca] font-bold hover:underline inline-flex items-center text-sm md:text-base">
+                                    View Strategic Archive <ArrowRight size={16} className="ml-2" />
+                                </Link>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
+    )
+}
+```
+
+## components/blog/BlogList.tsx
+```tsx
+import { BlogCard } from "./BlogCard"
+import { type PostMetadata } from "@/lib/mdx"
+
+interface BlogListProps {
+    posts: PostMetadata[]
+    from?: string
+}
+
+export function BlogList({ posts, from }: BlogListProps) {
+    return (
+        <div className="space-y-0 border-t border-neutral-200">
+            {posts.map((post, index) => (
+                <BlogCard key={post.slug} post={post} index={index} from={from} />
+            ))}
+        </div>
+    )
+}
+```
+
+## components/blog/BlogCard.tsx
+```tsx
+"use client"
+
+import Link from "next/link"
+import { motion } from "framer-motion"
+import { formatDate } from "@/lib/utils"
+import { type PostMetadata } from "@/lib/mdx"
+
+interface BlogCardProps {
+    post: PostMetadata
+    index?: number
+    from?: string
+}
+
+export function BlogCard({ post, index = 0, from }: BlogCardProps) {
+    const href = from ? `/blog/${post.slug}?from=${from}` : `/blog/${post.slug}`
+    return (
+        <motion.article
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.3, delay: index * 0.05 }}
+            className="group py-6 border-b border-neutral-100 last:border-0 hover:bg-neutral-50 transition-colors"
+        >
+            <Link href={href} className="grid grid-cols-1 md:grid-cols-12 gap-4 items-baseline">
+                <div className="md:col-span-2">
+                    <span className="font-mono text-sm text-neutral-500 font-medium group-hover:text-brand-primary transition-colors">
+                        {formatDate(post.date)}
+                    </span>
+                </div>
+                <div className="md:col-span-8">
+                    <h3 className="text-xl font-bold text-neutral-900 group-hover:text-[#4338ca] transition-colors mb-2">
+                        {post.title}
+                    </h3>
+                    <p className="text-neutral-600 line-clamp-2 md:line-clamp-1">
+                        {post.excerpt}
+                    </p>
+                </div>
+                <div className="md:col-span-2 text-right hidden md:block">
+                    <span className="font-mono text-xs font-bold text-[#10b981] uppercase tracking-wider">
+                        {post.readingTime}
+                    </span>
+                </div>
+            </Link>
+        </motion.article>
     )
 }
 ```

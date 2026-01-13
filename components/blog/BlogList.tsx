@@ -1,6 +1,4 @@
-"use client"
-
-import { BlogCard } from "@/components/blog/BlogCard"
+import { BlogCard } from "./BlogCard"
 import { type PostMetadata } from "@/lib/mdx"
 
 interface BlogListProps {
@@ -10,7 +8,7 @@ interface BlogListProps {
 
 export function BlogList({ posts, from }: BlogListProps) {
     return (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="space-y-0 border-t border-neutral-200">
             {posts.map((post, index) => (
                 <BlogCard key={post.slug} post={post} index={index} from={from} />
             ))}

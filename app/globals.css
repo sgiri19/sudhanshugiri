@@ -16,11 +16,11 @@
   --brand-primary: #4338ca;
   --brand-secondary: #0f172a;
   --brand-accent: #10b981;
-  --grid-color: rgba(67, 56, 202, 0.02);
+  --grid-color: rgba(67, 56, 202, 0.015);
 }
 
 @layer base {
-  @import url('https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;600;700;800&family=JetBrains+Mono:wght@400;700&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap');
 
   body {
     background-color: var(--background);
@@ -30,8 +30,7 @@
     background-image:
       linear-gradient(var(--grid-color) 1px, transparent 1px),
       linear-gradient(90deg, var(--grid-color) 1px, transparent 1px);
-    background-size: 60px 60px;
-    /* Larger, cleaner grid */
+    background-size: 40px 40px;
   }
 
   h1,
@@ -39,7 +38,7 @@
   h3,
   h4,
   .font-heading {
-    @apply font-black tracking-tight text-neutral-900;
+    @apply font-bold tracking-tight text-neutral-900;
   }
 }
 
@@ -49,11 +48,9 @@
 }
 
 .blueprint-card {
-  @apply relative overflow-hidden bg-white border border-neutral-100 shadow-sm transition-all duration-300;
-  background-image: radial-gradient(circle at 1.5px 1.5px, rgba(67, 56, 202, 0.03) 1px, transparent 0);
-  background-size: 32px 32px;
+  @apply relative overflow-hidden bg-white border-b border-neutral-200 transition-colors duration-200;
 }
 
 .blueprint-card:hover {
-  @apply border-brand-primary/20 shadow-2xl shadow-brand-primary/5;
+  @apply bg-neutral-50;
 }
