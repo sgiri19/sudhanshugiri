@@ -66,57 +66,41 @@ export default async function PostPage({
             <>
                 <Header />
                 <main className="flex-grow py-24">
-                    <article className="container mx-auto px-6 md:px-12 max-w-4xl">
-                        <Link
-                            href={backLink}
-                            className="inline-flex items-center text-[10px] font-black uppercase tracking-[0.2em] text-neutral-400 hover:text-brand-primary mb-12 transition-all mono-metric group"
-                        >
-                            <ArrowLeft size={16} className="mr-2 group-hover:-translate-x-1 transition-transform" />
-                            {backText}
-                        </Link>
+                    <article className="container mx-auto px-6 md:px-12 max-w-5xl">
+                        <div className="max-w-4xl mx-auto">
+                            <Link
+                                href={backLink}
+                                className="inline-flex items-center text-[10px] font-black uppercase tracking-[0.2em] text-neutral-400 hover:text-brand-primary mb-12 transition-all mono-metric group"
+                            >
+                                <ArrowLeft size={16} className="mr-2 group-hover:-translate-x-1 transition-transform" />
+                                {backText}
+                            </Link>
 
-                        {/* Hero Section */}
-                        <div className="relative w-full h-[300px] md:h-[600px] mb-16 rounded-[2.5rem] overflow-hidden shadow-2xl border border-neutral-100 bg-neutral-50">
-                            {metadata.coverImage ? (
-                                <img
-                                    src={metadata.coverImage}
-                                    alt={metadata.title}
-                                    className="object-cover object-center w-full h-full grayscale-[0.2] hover:grayscale-0 transition-all duration-700"
-                                />
-                            ) : (
-                                <div className="w-full h-full bg-brand-primary flex items-center justify-center relative overflow-hidden">
-                                    <div className="absolute inset-0 opacity-10 bg-[radial-gradient(circle_at_center,_white_1px,_transparent_0)] bg-[size:40px_40px]"></div>
-                                    <span className="text-white/10 text-6xl md:text-[15rem] font-black uppercase tracking-tighter select-none leading-none -rotate-12 mono-metric">
+                            <header className="mb-16">
+                                <h1 className="text-4xl md:text-7xl font-black text-neutral-900 leading-[1.1] mb-8 tracking-tighter italic">
+                                    {metadata.title}
+                                </h1>
+
+                                <div className="flex flex-wrap items-center gap-6 text-[10px] font-black uppercase tracking-[0.2em] text-neutral-400 mono-metric">
+                                    <div className="flex items-center gap-2">
+                                        <Calendar size={14} className="text-brand-primary" />
+                                        {formatDate(metadata.date)}
+                                    </div>
+                                    <div className="h-4 w-px bg-neutral-100 hidden md:block" />
+                                    <div className="flex items-center gap-2 text-brand-primary">
                                         {metadata.category}
-                                    </span>
+                                    </div>
+                                    <div className="h-4 w-px bg-neutral-100 hidden md:block" />
+                                    <div className="flex items-center gap-2">
+                                        <Clock size={14} className="text-brand-primary" />
+                                        {metadata.readingTime}
+                                    </div>
                                 </div>
-                            )}
-                        </div>
+                            </header>
 
-                        <header className="mb-16">
-                            <h1 className="text-4xl md:text-7xl font-black text-neutral-900 leading-[1.1] mb-8 tracking-tighter italic">
-                                {metadata.title}
-                            </h1>
-
-                            <div className="flex flex-wrap items-center gap-6 text-[10px] font-black uppercase tracking-[0.2em] text-neutral-400 mono-metric">
-                                <div className="flex items-center gap-2">
-                                    <Calendar size={14} className="text-brand-primary" />
-                                    {formatDate(metadata.date)}
-                                </div>
-                                <div className="h-4 w-px bg-neutral-100 hidden md:block" />
-                                <div className="flex items-center gap-2 text-brand-primary">
-                                    {metadata.category}
-                                </div>
-                                <div className="h-4 w-px bg-neutral-100 hidden md:block" />
-                                <div className="flex items-center gap-2">
-                                    <Clock size={14} className="text-brand-primary" />
-                                    {metadata.readingTime}
-                                </div>
+                            <div className="prose prose-neutral max-w-none prose-lg md:prose-2xl prose-headings:font-black prose-headings:tracking-tight prose-a:text-brand-primary prose-a:no-underline hover:prose-a:underline font-medium text-neutral-800 leading-relaxed">
+                                <MDXRemote source={content} components={components} />
                             </div>
-                        </header>
-
-                        <div className="prose prose-neutral max-w-none prose-lg md:prose-2xl prose-headings:font-black prose-headings:tracking-tight prose-a:text-brand-primary prose-a:no-underline hover:prose-a:underline font-medium text-neutral-800 leading-relaxed">
-                            <MDXRemote source={content} components={components} />
                         </div>
 
                         <footer className="mt-20 pt-12 border-t border-neutral-100">
