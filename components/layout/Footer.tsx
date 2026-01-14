@@ -24,12 +24,6 @@ export function Footer() {
                         >
                             Twitter
                         </a>
-                        <a
-                            href="mailto:sudhanshu@example.com"
-                            className="text-sm text-neutral-600 hover:text-neutral-900 transition-colors"
-                        >
-                            Email
-                        </a>
                     </div>
                 </div>
             </div>

@@ -11,7 +11,7 @@ export function Header() {
                         href="/"
                         className="text-lg font-semibold text-neutral-900 hover:text-indigo-600 transition-colors"
                     >
-                        Sudhanshu Giri
+                        SG.
                     </Link>
 
                     <div className="flex items-center gap-8">
