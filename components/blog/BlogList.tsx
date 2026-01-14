@@ -8,7 +8,7 @@ interface BlogListProps {
 
 export function BlogList({ posts, from }: BlogListProps) {
     return (
-        <div className="space-y-0 border-t border-neutral-200">
+        <div className="space-y-8">
             {posts.map((post, index) => (
                 <BlogCard key={post.slug} post={post} index={index} from={from} />
             ))}

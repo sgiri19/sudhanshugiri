@@ -2,8 +2,15 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "SG. | Program Leader & Product Strategist",
-  description: "Personal portfolio and blog of Sudhanshu Giri.",
+  title: "Sudhanshu Giri | Program Product Leader & Enterprise AI Strategist",
+  description: "Sudhanshu Giri is a Program Product Leader specializing in Enterprise AI. Building scalable AI systems for high-stakes environments at companies like ByteDance and Skit.ai.",
+  keywords: "Sudhanshu Giri, Program Product Leader, Enterprise AI, AI Product Strategy, Product Management, AI Systems",
+  authors: [{ name: "Sudhanshu Giri" }],
+  openGraph: {
+    title: "Sudhanshu Giri | Program Product Leader",
+    description: "Building scalable AI systems for high-stakes environments",
+    type: "website",
+  },
 };
 
 export default function RootLayout({

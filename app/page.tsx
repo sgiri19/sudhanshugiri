@@ -1,27 +1,19 @@
 import { Header } from "@/components/layout/Header"
 import { Footer } from "@/components/layout/Footer"
 import { Identity } from "@/components/sections/Identity"
-import { Briefing } from "@/components/sections/Briefing"
-import { CareerLog } from "@/components/sections/CareerLog"
-import { SelectedProductionWork } from "@/components/sections/SelectedProductionWork"
-import { OperatingPrinciples } from "@/components/sections/OperatingPrinciples"
-import { DecisionFramework } from "@/components/sections/DecisionFramework"
-import { FeaturedPosts } from "@/components/sections/FeaturedPosts"
+import { Work } from "@/components/sections/Work"
+import { Writing } from "@/components/sections/Writing"
 
 export default function Home() {
   return (
-    <>
+    <div className="min-h-screen bg-white">
       <Header />
-      <main className="flex-grow max-w-5xl mx-auto w-full border-x border-neutral-100 min-h-screen bg-white">
+      <main className="max-w-4xl mx-auto px-6 md:px-8">
         <Identity />
-        <Briefing />
-        <CareerLog />
-        <SelectedProductionWork />
-        <OperatingPrinciples />
-        <DecisionFramework />
-        <FeaturedPosts />
+        <Work />
+        <Writing />
       </main>
       <Footer />
-    </>
+    </div>
   )
 }
