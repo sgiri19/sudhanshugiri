@@ -1,6 +1,7 @@
 @import "tailwindcss";
 
 @theme {
+  /* Brand color - matches Tailwind's indigo-600 */
   --color-brand-primary: #4338ca;
   --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   --font-mono: "JetBrains Mono", monospace;

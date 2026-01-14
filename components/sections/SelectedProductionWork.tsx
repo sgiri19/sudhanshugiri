@@ -22,10 +22,10 @@ export function SelectedProductionWork() {
                     }
                 ].map((item, i) => (
                     <div key={i} className="flex flex-col space-y-4">
-                        <span className="font-mono text-[10px] font-bold text-[#4338ca] uppercase tracking-wider">
+                        <span className="font-mono text-[10px] font-bold text-indigo-600 uppercase tracking-wider">
                             {item.cat}
                         </span>
-                        <h3 className="text-2xl font-bold text-neutral-900 leading-tight group-hover:text-[#4338ca] transition-colors">
+                        <h3 className="text-2xl font-bold text-neutral-900 leading-tight group-hover:text-indigo-600 transition-colors">
                             {item.title}
                         </h3>
                         <p className="text-neutral-600 leading-relaxed text-lg">

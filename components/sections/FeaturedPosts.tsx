@@ -18,7 +18,7 @@ export function FeaturedPosts() {
                 {posts.map((post, i) => (
                     <Link key={i} href={`/blog/${post.slug}`} className="group block py-2 hover:bg-neutral-50 -mx-4 px-4 rounded-none transition-colors">
                         <div className="flex flex-col md:flex-row md:items-baseline md:justify-between gap-1">
-                            <h3 className="text-lg font-bold text-neutral-900 group-hover:text-[#4338ca] transition-colors">
+                            <h3 className="text-lg font-bold text-neutral-900 group-hover:text-indigo-600 transition-colors">
                                 {post.title}
                             </h3>
                             <span className="font-mono text-xs text-neutral-400">
@@ -28,7 +28,7 @@ export function FeaturedPosts() {
                     </Link>
                 ))}
                 <div className="pt-6">
-                    <Link href="/blog" className="text-[#4338ca] font-bold hover:underline inline-flex items-center text-sm">
+                    <Link href="/blog" className="text-indigo-600 font-bold hover:underline inline-flex items-center text-sm">
                         View Strategic Archive <ArrowRight size={14} className="ml-2" />
                     </Link>
                 </div>
