@@ -14,7 +14,7 @@ export default function BlogPage() {
     return (
         <>
             <Header />
-            <main className="flex-grow max-w-3xl mx-auto w-full border-x border-neutral-100 min-h-screen bg-white">
+            <main className="flex-grow max-w-5xl mx-auto w-full border-x border-neutral-100 min-h-screen bg-white">
                 <div className="py-12 px-6">
                     <div className="mb-12 border-b border-neutral-100 pb-12">
                         <h1 className="text-4xl md:text-5xl font-bold text-[#4338ca] mb-4 tracking-tighter">

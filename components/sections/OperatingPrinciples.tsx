@@ -22,19 +22,17 @@ export function OperatingPrinciples() {
             <h2 className="font-mono text-xs font-bold tracking-widest text-neutral-400 uppercase mb-8">
                 03 / Operating Principles
             </h2>
-            <div className="grid grid-cols-1 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-16">
                 {principles.map((item, i) => (
-                    <div key={item.rule} className="grid grid-cols-1 md:grid-cols-12 gap-4">
-                        <div className="md:col-span-2">
-                            <span className="font-mono text-sm font-bold text-brand-primary uppercase">
-                                RULE {item.rule}
-                            </span>
-                        </div>
-                        <div className="md:col-span-10">
-                            <h4 className="text-lg font-bold text-neutral-900 mb-1">
+                    <div key={item.rule} className="flex flex-col space-y-4">
+                        <span className="font-mono text-sm font-bold text-brand-primary uppercase">
+                            RULE {item.rule}
+                        </span>
+                        <div>
+                            <h4 className="text-xl font-bold text-neutral-900 mb-2">
                                 {item.title}
                             </h4>
-                            <p className="text-neutral-600 leading-relaxed max-w-xl text-sm md:text-base">
+                            <p className="text-neutral-600 leading-relaxed text-lg">
                                 {item.desc}
                             </p>
                         </div>

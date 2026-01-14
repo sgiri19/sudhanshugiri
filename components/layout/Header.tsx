@@ -16,7 +16,7 @@ export function Header() {
 
     return (
         <header className="sticky top-0 z-40 w-full bg-white/80 backdrop-blur-md border-b border-neutral-100">
-            <div className="container mx-auto px-6 max-w-3xl">
+            <div className="container mx-auto px-6 max-w-5xl">
                 <div className="flex h-14 items-center justify-between">
                     <div className="flex items-center">
                         <Link href="/" className="text-xl font-bold tracking-tight text-neutral-900 hover:text-[#4338ca] transition-colors">

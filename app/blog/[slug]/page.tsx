@@ -65,7 +65,7 @@ export default async function PostPage({
         return (
             <>
                 <Header />
-                <main className="flex-grow max-w-3xl mx-auto w-full border-x border-neutral-100 min-h-screen bg-white">
+                <main className="flex-grow max-w-5xl mx-auto w-full border-x border-neutral-100 min-h-screen bg-white">
                     <article className="py-12 px-6">
                         <div>
                             <Link
