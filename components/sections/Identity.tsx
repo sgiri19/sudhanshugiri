@@ -2,7 +2,7 @@ import Image from "next/image"
 
 export function Identity() {
     return (
-        <section className="py-20 md:py-32">
+        <section className="py-16 md:py-24">
             <div className="flex flex-col md:flex-row items-start md:items-center gap-8 md:gap-16">
                 {/* Left: Text Content */}
                 <div className="flex-1">

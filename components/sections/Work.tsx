@@ -27,7 +27,7 @@ export function Work() {
     ]
 
     return (
-        <section className="py-16 md:py-24">
+        <section className="py-12 md:py-16">
             <h2 className="text-3xl md:text-4xl font-bold text-neutral-900 mb-12">
                 Experience
             </h2>
