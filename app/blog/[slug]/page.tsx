@@ -32,14 +32,14 @@ const components = {
         // eslint-disable-next-line @next/next/no-img-element
         <img
             {...props}
-            className="rounded-[2rem] border border-neutral-100 my-12 mx-auto block max-w-full h-auto shadow-xl"
+            className="rounded-lg my-8 mx-auto block max-w-full h-auto"
             alt={props.alt || ''}
         />
     ),
     a: (props: any) => (
         <a
             {...props}
-            className="text-brand-primary border-b-2 border-brand-primary/20 hover:border-brand-primary transition-colors font-bold"
+            className="text-indigo-600 hover:text-indigo-700 underline"
             target={props.href?.startsWith('http') ? '_blank' : undefined}
             rel={props.href?.startsWith('http') ? 'noopener noreferrer' : undefined}
         />
@@ -60,46 +60,47 @@ export default async function PostPage({
 
         const from = resolvedSearchParams.from
         const backLink = from === 'work' ? '/' : '/blog'
-        const backText = from === 'work' ? 'Back to Home' : 'Back to Blog'
+        const backText = from === 'work' ? 'Back to Home' : 'Back to Writing'
 
         return (
-            <>
+            <div className="min-h-screen bg-white">
                 <Header />
-                <main className="flex-grow max-w-5xl mx-auto w-full border-x border-neutral-100 min-h-screen bg-white">
-                    <article className="py-12 px-6">
-                        <div>
-                            <Link
-                                href={backLink}
-                                className="inline-flex items-center text-[10px] font-black uppercase tracking-[0.2em] text-neutral-400 hover:text-brand-primary mb-12 transition-all mono-metric group"
-                            >
-                                <ArrowLeft size={16} className="mr-2 group-hover:-translate-x-1 transition-transform" />
-                                {backText}
-                            </Link>
+                <main className="max-w-4xl mx-auto px-6 md:px-8">
+                    <article className="py-20 md:py-32">
+                        <Link
+                            href={backLink}
+                            className="inline-flex items-center text-sm text-neutral-500 hover:text-neutral-900 mb-8 transition-colors"
+                        >
+                            <ArrowLeft size={16} className="mr-2" />
+                            {backText}
+                        </Link>
 
-                            <header className="mb-12 border-b border-neutral-100 pb-12">
-                                <h1 className="text-3xl md:text-4xl font-bold text-neutral-900 mb-6 leading-tight tracking-tight">
-                                    {metadata.title}
-                                </h1>
+                        <header className="mb-12">
+                            <h1 className="text-4xl md:text-5xl font-bold text-neutral-900 mb-6 leading-tight">
+                                {metadata.title}
+                            </h1>
 
-                                <div className="flex flex-wrap gap-6 text-xs font-mono font-medium text-neutral-500 uppercase tracking-wide">
-                                    <time dateTime={metadata.date}>
-                                        {formatDate(metadata.date)}
-                                    </time>
-                                    <span className="text-neutral-300">/</span>
-                                    <span>{metadata.readingTime}</span>
-                                </div>
-                            </header>
-
-                            <div className="prose prose-neutral max-w-none prose-lg md:prose-2xl prose-headings:font-black prose-headings:tracking-tight prose-a:text-brand-primary prose-a:no-underline hover:prose-a:underline font-medium text-neutral-800 leading-relaxed">
-                                <MDXRemote source={content} components={components} />
+                            <div className="flex items-center gap-4 text-sm text-neutral-500">
+                                <time dateTime={metadata.date}>
+                                    {formatDate(metadata.date)}
+                                </time>
+                                <span>·</span>
+                                <span>{metadata.readingTime}</span>
                             </div>
+                        </header>
+
+                        <div className="prose prose-lg prose-neutral max-w-none">
+                            <MDXRemote source={content} components={components} />
                         </div>
 
-                        <footer className="mt-20 pt-12 border-t border-neutral-100">
-                            <div className="flex flex-wrap gap-3">
+                        <footer className="mt-16 pt-8 border-t border-neutral-100">
+                            <div className="flex flex-wrap gap-2">
                                 {metadata.tags.map(tag => (
-                                    <span key={tag} className="px-5 py-2 rounded-xl bg-neutral-50 border border-neutral-100 text-[10px] font-black text-neutral-500 uppercase tracking-widest mono-metric">
-                                        #{tag}
+                                    <span
+                                        key={tag}
+                                        className="px-3 py-1 text-xs bg-neutral-100 text-neutral-600 rounded-full"
+                                    >
+                                        {tag}
                                     </span>
                                 ))}
                             </div>
@@ -107,7 +108,7 @@ export default async function PostPage({
                     </article>
                 </main>
                 <Footer />
-            </>
+            </div>
         )
     } catch (error) {
         return notFound()
