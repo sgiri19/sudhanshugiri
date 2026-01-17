@@ -15,24 +15,24 @@ export function Header() {
                     </Link>
 
                     <div className="flex items-center gap-8">
-                        <a
-                            href="#about"
+                        <Link
+                            href="/#about"
                             className="text-sm text-neutral-600 hover:text-neutral-900 transition-colors"
                         >
                             About
-                        </a>
-                        <a
-                            href="#work"
+                        </Link>
+                        <Link
+                            href="/#work"
                             className="text-sm text-neutral-600 hover:text-neutral-900 transition-colors"
                         >
                             Work
-                        </a>
-                        <a
-                            href="#writing"
+                        </Link>
+                        <Link
+                            href="/#writing"
                             className="text-sm text-neutral-600 hover:text-neutral-900 transition-colors"
                         >
                             Writing
-                        </a>
+                        </Link>
                     </div>
                 </nav>
             </div>
