@@ -17,7 +17,7 @@ export function Footer() {
                             LinkedIn
                         </a>
                         <a
-                            href="https://twitter.com/sudhanshugiri"
+                            href="https://x.com/sudhanshugiri19"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="text-sm text-neutral-600 hover:text-neutral-900 transition-colors"

@@ -17,35 +17,40 @@ export function Writing() {
     ]
 
     return (
-        <section className="py-12 md:py-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-neutral-900 mb-12">
-                Writing
-            </h2>
-            <div className="space-y-8">
-                {posts.map((post, index) => (
+        <section id="writing" className="py-16 md:py-20">
+            <div className="max-w-4xl mx-auto px-6 md:px-8">
+                <h2 className="text-3xl md:text-4xl font-bold text-neutral-900 mb-4">
+                    Writing
+                </h2>
+                <p className="text-lg text-neutral-600 mb-12">
+                    I write about AI delivery, product leadership, and building systems that scale. Practical insights from leading production AI implementations.
+                </p>
+                <div className="space-y-8">
+                    {posts.map((post, index) => (
+                        <Link
+                            key={index}
+                            href={`/blog/${post.slug}`}
+                            className="block group hover:bg-neutral-50 -mx-4 px-4 py-4 rounded-lg transition-colors"
+                        >
+                            <div className="flex flex-col md:flex-row md:items-baseline md:justify-between gap-2">
+                                <h3 className="text-xl font-semibold text-neutral-900 group-hover:text-indigo-600 transition-colors">
+                                    {post.title}
+                                </h3>
+                                <span className="text-sm font-mono text-neutral-400">
+                                    {post.date}
+                                </span>
+                            </div>
+                        </Link>
+                    ))}
+                </div>
+                <div className="mt-8">
                     <Link
-                        key={index}
-                        href={`/blog/${post.slug}`}
-                        className="block group hover:bg-neutral-50 -mx-4 px-4 py-4 rounded-lg transition-colors"
+                        href="/blog"
+                        className="text-indigo-600 hover:text-indigo-700 font-medium inline-flex items-center gap-2"
                     >
-                        <div className="flex flex-col md:flex-row md:items-baseline md:justify-between gap-2">
-                            <h3 className="text-xl font-semibold text-neutral-900 group-hover:text-indigo-600 transition-colors">
-                                {post.title}
-                            </h3>
-                            <span className="text-sm font-mono text-neutral-400">
-                                {post.date}
-                            </span>
-                        </div>
+                        View all writing →
                     </Link>
-                ))}
-            </div>
-            <div className="mt-8">
-                <Link
-                    href="/blog"
-                    className="text-indigo-600 hover:text-indigo-700 font-medium inline-flex items-center gap-2"
-                >
-                    View all writing →
-                </Link>
+                </div>
             </div>
         </section>
     )
